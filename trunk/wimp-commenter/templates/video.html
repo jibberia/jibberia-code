@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block js %}
+<script type="text/javascript" src="http://www.wimp.com/swfobject.js"></script>
+{% endblock js %}
+
+{% block content %}
+
+<p><a href="/">&larr; back to list</a></p>
+
+<h1>wimp video: {{ video.title }}</h1>
+<p id="description">{{ video.description }}</p>
+
+<p><a href="{{ video.wimp_url }}">{{ video.wimp_url }}</a></p>
+
+<form action="/video/{{ video.key }}/comment" method="post" accept-charset="utf-8">
+    <textarea name="text" rows="8" cols="40"></textarea><br/>
+    <label for="author">your name</label><input type="text" name="author" value="" id="author"/>
+    <p><input type="submit" value="add your comment"/></p>
+</form>
+
+<ul>
+{% for comment in video.comments %}
+    <li>
+        <p>by {{ comment.author }} on {{ comment.date }}</p>
+        <p>{{ comment.text }}</p>
+    </li>
+{% endfor %}
+</ul>
+<!--
+<div id="player">
+    <a href="http://get.adobe.com/flashplayer/">Flash Required</a>
+</div>
+<script type="text/javascript">
+
+	var s1 = new SWFObject("http://www.wimp.com/mediaplayer.swf","mediaplayer","560", "440","8");
+				s1.addParam("allowfullscreen","true");
+	s1.addVariable("width","560");
+	s1.addVariable("height","440");
+	s1.addVariable("autostart","true");
+	s1.addVariable("fullscreen","true");
+	s1.addVariable("file","http://www.wimp.com/loadvideo/e02b6c4aae32943a1907fb460bb1e072/49a0d2a3/3d7f08c55d99efa48907a9efec5606a6_whiskey.flv");
+	//s1.write("player");
+</script>
+-->
+
+{% endblock content %}

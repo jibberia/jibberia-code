@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>wimp video comments</h1>
+<p><a href="/add-video">add a video</a></p>
+
+<ul>
+{% for video in videos %}
+    <li><a href="/video/{{ video.key }}">{{ video.wimp_url }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
