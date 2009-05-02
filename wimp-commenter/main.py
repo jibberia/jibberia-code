@@ -9,7 +9,9 @@ from google.appengine.ext.webapp import template
 from models import Video, Comment
 
 def render_template(who, template_path, values = {}):
-  abs_path = '/Users/kevin/pybox/google-app-engine/wimp-commenter/templates/' + template_path
+#  abs_path = '/Users/kevin/pybox/google-app-engine/wimp-commenter/templates/' + template_path
+#  abs_path = '/Users/kevin/jibberia-code/wimp-commenter/templates' + template_path
+  abs_path = './templates/' + template_path
   output = template.render(abs_path, values)
   who.response.out.write(output)
 
