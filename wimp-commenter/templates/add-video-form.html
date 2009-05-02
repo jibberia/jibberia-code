@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} | add a video{% endblock title %}
+
+{% block content %}
+
+<form action="/add-video" method="post" accept-charset="utf-8">
+    <p>
+        <label for="wimp_url">wimp url: </label><input type="text" name="wimp_url" value="" id="wimp_url"/>
+        <input type="submit" value="continue &rarr;"/>
+    </p>
+</form>
+
+{% endblock content %}
