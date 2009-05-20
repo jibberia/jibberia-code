@@ -19,3 +19,4 @@ samples = append(samples, extras)
 fft_shape = (samples.size / window_size, window_size)
 fft_windows = map(fft, samples.reshape(fft_shape))
 
+print "got %d fft windows" % len(fft_windows)
