@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A643EC00FC381A4005F42C0 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EA10FC381A4005F42C0 /* NSData-SQLitePersistence.m */; };
+		0A643EC10FC381A4005F42C0 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EA30FC381A4005F42C0 /* NSDate-SQLitePersistence.m */; };
+		0A643EC20FC381A4005F42C0 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EA50FC381A4005F42C0 /* NSMutableArray-MultipleSort.m */; };
+		0A643EC30FC381A4005F42C0 /* NSMutableData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EA70FC381A4005F42C0 /* NSMutableData-SQLitePersistence.m */; };
+		0A643EC40FC381A4005F42C0 /* NSNumber-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EA90FC381A4005F42C0 /* NSNumber-SQLitePersistence.m */; };
+		0A643EC50FC381A4005F42C0 /* NSObject-ClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EAB0FC381A4005F42C0 /* NSObject-ClassName.m */; };
+		0A643EC60FC381A4005F42C0 /* NSObject-MissingKV.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EAD0FC381A4005F42C0 /* NSObject-MissingKV.m */; };
+		0A643EC70FC381A4005F42C0 /* NSObject-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EAF0FC381A4005F42C0 /* NSObject-SQLitePersistence.m */; };
+		0A643EC80FC381A4005F42C0 /* NSString-NumberStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EB10FC381A4005F42C0 /* NSString-NumberStuff.m */; };
+		0A643EC90FC381A4005F42C0 /* NSString-SQLiteColumnName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EB30FC381A4005F42C0 /* NSString-SQLiteColumnName.m */; };
+		0A643ECA0FC381A4005F42C0 /* NSString-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EB50FC381A4005F42C0 /* NSString-SQLitePersistence.m */; };
+		0A643ECB0FC381A4005F42C0 /* NSString-UppercaseFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EB70FC381A4005F42C0 /* NSString-UppercaseFirst.m */; };
+		0A643ECC0FC381A4005F42C0 /* SQLiteInstanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EB90FC381A4005F42C0 /* SQLiteInstanceManager.m */; };
+		0A643ECD0FC381A4005F42C0 /* SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EBB0FC381A4005F42C0 /* SQLitePersistentObject.m */; };
+		0A643ECE0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EBD0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.m */; };
+		0A643ECF0FC381A4005F42C0 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EBF0FC381A4005F42C0 /* UIImage-SQLitePersistence.m */; };
+		0A643ED10FC38205005F42C0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A643ED00FC38205005F42C0 /* libsqlite3.dylib */; };
+		0A643EE90FC38282005F42C0 /* SpeedMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643EE80FC38282005F42C0 /* SpeedMeasurement.m */; };
+		0A643EEB0FC382B0005F42C0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A643EEA0FC382B0005F42C0 /* CoreLocation.framework */; };
+		0A643F5F0FC38B1D005F42C0 /* SpeedMeasurementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A643F5E0FC38B1D005F42C0 /* SpeedMeasurementViewController.m */; };
+		1D3623260D0F684500981E51 /* SpeedLocatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SpeedLocatorAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
+		282CCBFE0DB6C98000C4EA27 /* SpeedMeasurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SpeedMeasurementView.xib */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A643EA00FC381A4005F42C0 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EA10FC381A4005F42C0 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EA20FC381A4005F42C0 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EA30FC381A4005F42C0 /* NSDate-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EA40FC381A4005F42C0 /* NSMutableArray-MultipleSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray-MultipleSort.h"; sourceTree = "<group>"; };
+		0A643EA50FC381A4005F42C0 /* NSMutableArray-MultipleSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray-MultipleSort.m"; sourceTree = "<group>"; };
+		0A643EA60FC381A4005F42C0 /* NSMutableData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EA70FC381A4005F42C0 /* NSMutableData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EA80FC381A4005F42C0 /* NSNumber-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EA90FC381A4005F42C0 /* NSNumber-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EAA0FC381A4005F42C0 /* NSObject-ClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-ClassName.h"; sourceTree = "<group>"; };
+		0A643EAB0FC381A4005F42C0 /* NSObject-ClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject-ClassName.m"; sourceTree = "<group>"; };
+		0A643EAC0FC381A4005F42C0 /* NSObject-MissingKV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-MissingKV.h"; sourceTree = "<group>"; };
+		0A643EAD0FC381A4005F42C0 /* NSObject-MissingKV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject-MissingKV.m"; sourceTree = "<group>"; };
+		0A643EAE0FC381A4005F42C0 /* NSObject-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EAF0FC381A4005F42C0 /* NSObject-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EB00FC381A4005F42C0 /* NSString-NumberStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-NumberStuff.h"; sourceTree = "<group>"; };
+		0A643EB10FC381A4005F42C0 /* NSString-NumberStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-NumberStuff.m"; sourceTree = "<group>"; };
+		0A643EB20FC381A4005F42C0 /* NSString-SQLiteColumnName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-SQLiteColumnName.h"; sourceTree = "<group>"; };
+		0A643EB30FC381A4005F42C0 /* NSString-SQLiteColumnName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-SQLiteColumnName.m"; sourceTree = "<group>"; };
+		0A643EB40FC381A4005F42C0 /* NSString-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EB50FC381A4005F42C0 /* NSString-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643EB60FC381A4005F42C0 /* NSString-UppercaseFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UppercaseFirst.h"; sourceTree = "<group>"; };
+		0A643EB70FC381A4005F42C0 /* NSString-UppercaseFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UppercaseFirst.m"; sourceTree = "<group>"; };
+		0A643EB80FC381A4005F42C0 /* SQLiteInstanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteInstanceManager.h; sourceTree = "<group>"; };
+		0A643EB90FC381A4005F42C0 /* SQLiteInstanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteInstanceManager.m; sourceTree = "<group>"; };
+		0A643EBA0FC381A4005F42C0 /* SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLitePersistentObject.h; sourceTree = "<group>"; };
+		0A643EBB0FC381A4005F42C0 /* SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLitePersistentObject.m; sourceTree = "<group>"; };
+		0A643EBC0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-SQLitePersistentObject.h"; sourceTree = "<group>"; };
+		0A643EBD0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-SQLitePersistentObject.m"; sourceTree = "<group>"; };
+		0A643EBE0FC381A4005F42C0 /* UIImage-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-SQLitePersistence.h"; sourceTree = "<group>"; };
+		0A643EBF0FC381A4005F42C0 /* UIImage-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-SQLitePersistence.m"; sourceTree = "<group>"; };
+		0A643ED00FC38205005F42C0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		0A643EE70FC38282005F42C0 /* SpeedMeasurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedMeasurement.h; sourceTree = "<group>"; };
+		0A643EE80FC38282005F42C0 /* SpeedMeasurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedMeasurement.m; sourceTree = "<group>"; };
+		0A643EEA0FC382B0005F42C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A643EF40FC3842C005F42C0 /* SpeedRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedRating.h; sourceTree = "<group>"; };
+		0A643F5D0FC38B1D005F42C0 /* SpeedMeasurementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedMeasurementViewController.h; sourceTree = "<group>"; };
+		0A643F5E0FC38B1D005F42C0 /* SpeedMeasurementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedMeasurementViewController.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SpeedLocatorAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedLocatorAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SpeedLocatorAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedLocatorAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SpeedLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		282CCBFD0DB6C98000C4EA27 /* SpeedMeasurementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedMeasurementView.xib; sourceTree = "<group>"; };
+		28A0AB4B0D9B1048005BE974 /* SpeedLocator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedLocator_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				0A643ED10FC38205005F42C0 /* libsqlite3.dylib in Frameworks */,
+				0A643EEB0FC382B0005F42C0 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A643ED20FC38229005F42C0 /* Models */,
+				0A643E9F0FC381A4005F42C0 /* SPO */,
+				28216C950DB411BC00E5133A /* FirstViewController.h */,
+				28216C960DB411BC00E5133A /* FirstViewController.m */,
+				1D3623240D0F684500981E51 /* SpeedLocatorAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SpeedLocatorAppDelegate.m */,
+				0A643F5D0FC38B1D005F42C0 /* SpeedMeasurementViewController.h */,
+				0A643F5E0FC38B1D005F42C0 /* SpeedMeasurementViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0A643E9F0FC381A4005F42C0 /* SPO */ = {
+			isa = PBXGroup;
+			children = (
+				0A643EA00FC381A4005F42C0 /* NSData-SQLitePersistence.h */,
+				0A643EA10FC381A4005F42C0 /* NSData-SQLitePersistence.m */,
+				0A643EA20FC381A4005F42C0 /* NSDate-SQLitePersistence.h */,
+				0A643EA30FC381A4005F42C0 /* NSDate-SQLitePersistence.m */,
+				0A643EA40FC381A4005F42C0 /* NSMutableArray-MultipleSort.h */,
+				0A643EA50FC381A4005F42C0 /* NSMutableArray-MultipleSort.m */,
+				0A643EA60FC381A4005F42C0 /* NSMutableData-SQLitePersistence.h */,
+				0A643EA70FC381A4005F42C0 /* NSMutableData-SQLitePersistence.m */,
+				0A643EA80FC381A4005F42C0 /* NSNumber-SQLitePersistence.h */,
+				0A643EA90FC381A4005F42C0 /* NSNumber-SQLitePersistence.m */,
+				0A643EAA0FC381A4005F42C0 /* NSObject-ClassName.h */,
+				0A643EAB0FC381A4005F42C0 /* NSObject-ClassName.m */,
+				0A643EAC0FC381A4005F42C0 /* NSObject-MissingKV.h */,
+				0A643EAD0FC381A4005F42C0 /* NSObject-MissingKV.m */,
+				0A643EAE0FC381A4005F42C0 /* NSObject-SQLitePersistence.h */,
+				0A643EAF0FC381A4005F42C0 /* NSObject-SQLitePersistence.m */,
+				0A643EB00FC381A4005F42C0 /* NSString-NumberStuff.h */,
+				0A643EB10FC381A4005F42C0 /* NSString-NumberStuff.m */,
+				0A643EB20FC381A4005F42C0 /* NSString-SQLiteColumnName.h */,
+				0A643EB30FC381A4005F42C0 /* NSString-SQLiteColumnName.m */,
+				0A643EB40FC381A4005F42C0 /* NSString-SQLitePersistence.h */,
+				0A643EB50FC381A4005F42C0 /* NSString-SQLitePersistence.m */,
+				0A643EB60FC381A4005F42C0 /* NSString-UppercaseFirst.h */,
+				0A643EB70FC381A4005F42C0 /* NSString-UppercaseFirst.m */,
+				0A643EB80FC381A4005F42C0 /* SQLiteInstanceManager.h */,
+				0A643EB90FC381A4005F42C0 /* SQLiteInstanceManager.m */,
+				0A643EBA0FC381A4005F42C0 /* SQLitePersistentObject.h */,
+				0A643EBB0FC381A4005F42C0 /* SQLitePersistentObject.m */,
+				0A643EBC0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.h */,
+				0A643EBD0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.m */,
+				0A643EBE0FC381A4005F42C0 /* UIImage-SQLitePersistence.h */,
+				0A643EBF0FC381A4005F42C0 /* UIImage-SQLitePersistence.m */,
+			);
+			path = SPO;
+			sourceTree = "<group>";
+		};
+		0A643ED20FC38229005F42C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A643EE70FC38282005F42C0 /* SpeedMeasurement.h */,
+				0A643EE80FC38282005F42C0 /* SpeedMeasurement.m */,
+				0A643EF40FC3842C005F42C0 /* SpeedRating.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SpeedLocator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* SpeedLocator */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = SpeedLocator;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* SpeedLocator_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				282CCBFD0DB6C98000C4EA27 /* SpeedMeasurementView.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A643EEA0FC382B0005F42C0 /* CoreLocation.framework */,
+				0A643ED00FC38205005F42C0 /* libsqlite3.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SpeedLocator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SpeedLocator" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeedLocator;
+			productName = SpeedLocator;
+			productReference = 1D6058910D05DD3D006BFB54 /* SpeedLocator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SpeedLocator" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* SpeedLocator */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SpeedLocator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				282CCBFE0DB6C98000C4EA27 /* SpeedMeasurementView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SpeedLocatorAppDelegate.m in Sources */,
+				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				0A643EC00FC381A4005F42C0 /* NSData-SQLitePersistence.m in Sources */,
+				0A643EC10FC381A4005F42C0 /* NSDate-SQLitePersistence.m in Sources */,
+				0A643EC20FC381A4005F42C0 /* NSMutableArray-MultipleSort.m in Sources */,
+				0A643EC30FC381A4005F42C0 /* NSMutableData-SQLitePersistence.m in Sources */,
+				0A643EC40FC381A4005F42C0 /* NSNumber-SQLitePersistence.m in Sources */,
+				0A643EC50FC381A4005F42C0 /* NSObject-ClassName.m in Sources */,
+				0A643EC60FC381A4005F42C0 /* NSObject-MissingKV.m in Sources */,
+				0A643EC70FC381A4005F42C0 /* NSObject-SQLitePersistence.m in Sources */,
+				0A643EC80FC381A4005F42C0 /* NSString-NumberStuff.m in Sources */,
+				0A643EC90FC381A4005F42C0 /* NSString-SQLiteColumnName.m in Sources */,
+				0A643ECA0FC381A4005F42C0 /* NSString-SQLitePersistence.m in Sources */,
+				0A643ECB0FC381A4005F42C0 /* NSString-UppercaseFirst.m in Sources */,
+				0A643ECC0FC381A4005F42C0 /* SQLiteInstanceManager.m in Sources */,
+				0A643ECD0FC381A4005F42C0 /* SQLitePersistentObject.m in Sources */,
+				0A643ECE0FC381A4005F42C0 /* UIColor-SQLitePersistentObject.m in Sources */,
+				0A643ECF0FC381A4005F42C0 /* UIImage-SQLitePersistence.m in Sources */,
+				0A643EE90FC38282005F42C0 /* SpeedMeasurement.m in Sources */,
+				0A643F5F0FC38B1D005F42C0 /* SpeedMeasurementViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SpeedLocator_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = SpeedLocator;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SpeedLocator_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = SpeedLocator;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SpeedLocator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SpeedLocator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
