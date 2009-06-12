@@ -20,19 +20,19 @@
 
 @synthesize window;
 @synthesize tabBarController;
-
+@synthesize locationManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 	[self initCoreLocation];
 	
-//	[self testSelect];
+	//	[self testSelect];
 	
-//	[self testMeasurement];
+	//	[self testMeasurement];
 	
-//	NSLog(@"");
-//	NSLog(@"---  DONE  ---");
-//	NSLog(@"");
+	//	NSLog(@"");
+	//	NSLog(@"---  DONE  ---");
+	//	NSLog(@"");
 	
 	// Add the tab bar controller's current view as a subview of the window
 	[window addSubview:tabBarController.view];
@@ -40,6 +40,7 @@
 
 - (void)initCoreLocation {
 	locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	NSLog(@"(%f, %f)", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
 }
@@ -50,12 +51,17 @@
 	NSLog(@"CL UPDATE: %@", newLocation);
 	NSLog(@"(%f, %f)", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
 }
-
 - (void)locationManager:(CLLocationManager *)manager
 	   didFailWithError:(NSError *)error {
 	NSLog(@"CL fail :(");
 }
+- (CLLocationCoordinate2D)currentLocation {
+	return locationManager.location.coordinate;
+}
 
++ (SpeedLocatorAppDelegate *)shared {
+	return (SpeedLocatorAppDelegate *)[UIApplication sharedApplication];
+}
 
 - (void)testSelect {
 	NSArray *ms = [SpeedMeasurement allObjects];
@@ -82,7 +88,7 @@
 	
 	NSLog(@"now find it...");
 	//	measurement = [SpeedMeasurement findByNotes:@"first"];
-	measurement = [SpeedMeasurement findByPK:1];
+	measurement = (SpeedMeasurement *)[SpeedMeasurement findByPK:1];
 	NSLog(@"%@", measurement);
 	
 	[measurement release], measurement = nil;
@@ -90,15 +96,15 @@
 
 /*
  Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
+ - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+ }
+ */
 
 /*
  Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
+ - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
+ }
+ */
 
 
 - (void)dealloc {

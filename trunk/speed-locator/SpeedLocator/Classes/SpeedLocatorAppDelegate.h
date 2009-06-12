@@ -17,5 +17,9 @@
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
+@property (readonly) CLLocationManager *locationManager;
+@property (readonly) CLLocationCoordinate2D currentLocation;
+
++ (SpeedLocatorAppDelegate *)shared;
 
 @end

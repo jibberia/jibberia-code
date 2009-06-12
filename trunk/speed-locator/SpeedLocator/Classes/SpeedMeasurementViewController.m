@@ -6,8 +6,9 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "SpeedMeasurementViewController.h"
-
+#import "SpeedLocatorAppDelegate.h"
 
 @implementation SpeedMeasurementViewController
 
@@ -25,7 +26,11 @@
 }
 
 - (IBAction)saveSpeedMeasurement {
-	NSLog(@"about to save: %@", self);
+	CLLocationCoordinate2D loc = [SpeedLocatorAppDelegate shared].currentLocation;
+	measurement.lat = loc.latitude;
+	measurement.lon = loc.longitude;
+	
+	NSLog(@"about to save: %@", measurement);
 	[measurement save];
 	NSLog(@"done saving measurement.");
 	measurement = [[SpeedMeasurement alloc] init];
