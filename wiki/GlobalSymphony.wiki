@@ -1,6 +1,6 @@
 #summary Temporary home for planning a future project
 
-_Note: this page is living here until we come up with a good name for this project; then it will get its own google code project._
+_This page is living here until we come up with a good name for this project; then it will get its own google code project._
 
 = Global Symphony =
 
@@ -12,7 +12,7 @@ _Note: this page is living here until we come up with a good name for this proje
  * *server:*  web app that accepts uploads, stores files and associated metadata, and serves it too
  * *"symphony" client:*  web app that plays back the audio in various wonderful ways
 
-
+----
 
 == Upload Client ==
 
@@ -33,8 +33,26 @@ Metadata:
  * (unsure - audio details? length, format, filename, etc..?)
 
 
-
+----
 
 == Server ==
 
 === First Iteration ===
+
+tech:
+ * python (perhaps web.py)
+ * mysql (because i'm considering deploying this on dreamhost)
+
+REST api thoughts:
+
+ * POST /sample
+ * GET /sample
+   * /sample/random
+
+----
+
+== Web Symphony Client ==
+
+=== First Iteration ===
+
+Almost no UI: loop X samples using soundmanager2 and javascript
