@@ -1,0 +1,40 @@
+#summary Temporary home for planning a future project
+
+_Note: this page is living here until we come up with a good name for this project; then it will get its own google code project._
+
+= Global Symphony =
+
+*Concisely:* Since people all over the world have fancy phones, let's make it easy for people to take samples of audio wherever they like and contribute to an unending, unique global symphony.
+
+= Components =
+
+ * *upload client:*  mobile app that uploads audio samples and metadata
+ * *server:*  web app that accepts uploads, stores files and associated metadata, and serves it too
+ * *"symphony" client:*  web app that plays back the audio in various wonderful ways
+
+
+
+== Upload Client ==
+
+=== First Iteration ===
+
+iPhone app:
+ * record/stop button
+ * play button
+ * upload button:
+   * hopefully compresses the audio
+   * includes metadata in json format (detailed below)
+   * POSTs the data
+   * indicates success / failure
+ 
+Metadata:
+ * timestamp
+ * lat/lon
+ * (unsure - audio details? length, format, filename, etc..?)
+
+
+
+
+== Server ==
+
+=== First Iteration ===
