@@ -1,6 +1,6 @@
 #summary Temporary home for planning a future project
 
-_This page is living here until we come up with a good name for this project; then it will get its own google code project._
+_This page is living here ([http://jibberia.com my] personal catch-all home for random code) until we come up with a good name for this project; then it will get its own google code project. And I think we're going GPL, though I chose BSD for this project. Whatever._
 
 = Global Symphony =
 
@@ -40,7 +40,8 @@ Metadata:
 === First Iteration ===
 
 tech:
- * python (perhaps web.py)
+ * *python/django*
+  Honestly, a personal choice; it's kinda heavy for what we need, but it fits my brain like a glove, and has wonderful support for file uploads and such
  * mysql (because i'm considering deploying this on dreamhost)
 
 REST api thoughts:
