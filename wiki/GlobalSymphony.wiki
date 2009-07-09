@@ -16,6 +16,23 @@ _This page is living here ([http://jibberia.com my] personal catch-all home for 
 
 == Upload Client ==
 
+*Working concept / use case*
+
+You go somewhere. You start the app, maybe taking a picture of where you are, and then put the phone down somewhere. At some point, it'll start recording, and when it decides to stop, it will upload the audio, (photo?), geographic location (via GPS), and probably some other useful (anonymous) information to our server.
+
+Then, the possibilities for playback are plentiful and wonderful -- arbitrary samples from a small region? mouse around the world to hear what's been happening? Or ignore the location. Audio is audio. Have the server analyse each sample, extracting qualities of sound (bright? dark? rhythmic? erratic? etc), and allow the user to make broad compositional strokes.
+
+The above ignores the planned second iteration; which feels important to us: *musician mode:*
+ * record/stop button
+ * plays back the loop in a loop, potentially allowing you to trim the edges of the loop to make it tight
+ * enhanced metadata:
+   * rhythmic?
+   * harmonic / melodic?
+   * one-shot?
+   * (etc)
+
+This will allow for more "musical" compositions on the web-symphony-client side. See below.
+
 === First Iteration ===
 
 iPhone app:
@@ -32,6 +49,10 @@ Metadata:
  * lat/lon
  * (unsure - audio details? length, format, filename, etc..?)
 
+=== Second Iteration ===
+
+For the public.
+ * rec 
 
 ----
 
@@ -56,4 +77,7 @@ REST api thoughts:
 
 === First Iteration ===
 
-Almost no UI: loop X samples using soundmanager2 and javascript
+Almost no UI: loop X samples using [http://www.schillmania.com/projects/soundmanager2 soundmanager2] and javascript.
+
+=== ideas ===
+ * ...
