@@ -7,12 +7,11 @@
 //
 
 #import "FlipsideViewController.h"
-#import <AVFoundation/AVFoundation.h>
+#import "Sample.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	BOOL recording;
-
-	AVAudioRecorder *recorder;
+	Sample *sample;
 }
 
 - (IBAction)showInfo;
