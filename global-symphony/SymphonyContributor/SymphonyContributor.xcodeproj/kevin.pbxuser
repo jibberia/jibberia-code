@@ -1,26 +1,98 @@
 // !$*UTF8*$!
 {
-	0A52B52C1007DA48008AD8D8 /* PBXTextBookmark */ = {
+	0A361D24100BE5BB00A71779 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 9";
+		rLen = 0;
+		rLoc = 182;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 0;
+	};
+	0A361D25100BE5BB00A71779 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
-		name = "MainViewController.m: 103";
+		name = "MainViewController.m: 13";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 236;
 		rType = 0;
-		vrLen = 637;
-		vrLoc = 2870;
+		vrLen = 1150;
+		vrLoc = 0;
 	};
-	0A52B52D1007DA48008AD8D8 /* PlistBookmark */ = {
+	0A361D26100BE5BB00A71779 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 13";
+		rLen = 0;
+		rLoc = 236;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 0;
+	};
+	0A361D27100BE5BB00A71779 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 9";
+		rLen = 0;
+		rLoc = 182;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 0;
+	};
+	0A361D28100BE5BB00A71779 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 13";
+		rLen = 0;
+		rLoc = 236;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 0;
+	};
+	0A76900210091D8C000639DA /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* SymphonyContributor-Info.plist */;
 		fallbackIsa = PBXBookmark;
 		isK = 0;
 		kPath = (
-			CFBundleInfoDictionaryVersion,
+			CFBundleIdentifier,
 		);
 		name = "/Users/kevin/src/jibberia-code/global-symphony/SymphonyContributor/SymphonyContributor-Info.plist";
 		rLen = 0;
 		rLoc = 2147483647;
+	};
+	0A76900310091D8C000639DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */;
+		name = "FlipsideViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 0;
+	};
+	0A76900510091D8C000639DA /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* SymphonyContributor-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/kevin/src/jibberia-code/global-symphony/SymphonyContributor/SymphonyContributor-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	0A76900610091D8C000639DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */;
+		name = "FlipsideViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 0;
 	};
 	0A8D7AC010057A570017E480 /* SymphonyContributor */ = {
 		isa = PBXExecutable;
@@ -75,16 +147,6 @@
 		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/CoreAudioTypes.h;
 		sourceTree = "<absolute>";
 	};
-	0A8D7B07100586460017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
-		name = "MainViewController.h: 12";
-		rLen = 0;
-		rLoc = 222;
-		rType = 0;
-		vrLen = 428;
-		vrLoc = 0;
-	};
 	0A8D7B09100586460017E480 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
@@ -105,79 +167,6 @@
 		vrLen = 428;
 		vrLoc = 0;
 	};
-	0A8D7B17100587FA0017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
-		name = "MainViewController.m: 64";
-		rLen = 0;
-		rLoc = 2063;
-		rType = 0;
-		vrLen = 950;
-		vrLoc = 1615;
-	};
-	0A8D7B22100588C90017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
-		name = "MainViewController.m: 103";
-		rLen = 0;
-		rLoc = 3268;
-		rType = 0;
-		vrLen = 637;
-		vrLoc = 2870;
-	};
-	0A8D7B2E10063CB60017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
-		name = "MainViewController.m: 103";
-		rLen = 0;
-		rLoc = 3268;
-		rType = 0;
-		vrLen = 637;
-		vrLoc = 2870;
-	};
-	0A8D7B2F10063CB60017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
-		name = "MainViewController.h: 12";
-		rLen = 0;
-		rLoc = 222;
-		rType = 0;
-		vrLen = 428;
-		vrLoc = 0;
-	};
-	0A8D7B3010063CB60017E480 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* SymphonyContributor-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/kevin/src/jibberia-code/global-symphony/SymphonyContributor/SymphonyContributor-Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	0A8D7B3110063CB60017E480 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
-		name = "MainViewController.h: 12";
-		rLen = 0;
-		rLoc = 222;
-		rType = 0;
-		vrLen = 428;
-		vrLoc = 0;
-	};
-	0A8D7B3210063CB60017E480 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* SymphonyContributor-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			CFBundleInfoDictionaryVersion,
-		);
-		name = "/Users/kevin/src/jibberia-code/global-symphony/SymphonyContributor/SymphonyContributor-Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
 	1D6058900D05DD3D006BFB54 /* SymphonyContributor */ = {
 		activeExec = 0;
 		executables = (
@@ -186,16 +175,24 @@
 	};
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 308}}";
-			sepNavSelRange = "{222, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 637}}";
+			sepNavSelRange = "{182, 0}";
 			sepNavVisRange = "{0, 428}";
 		};
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 2268}}";
-			sepNavSelRange = "{3268, 0}";
-			sepNavVisRange = "{2870, 637}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{2324, 372}\";\n            s = 0;\n        },\n                {\n            r = \"{2854, 320}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4836}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 2072}}";
+			sepNavSelRange = "{236, 0}";
+			sepNavVisRange = "{0, 1150}";
+		};
+	};
+	289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {850, 680}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 528}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -213,7 +210,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					672,
+					755,
 					20,
 					48,
 					43,
@@ -252,23 +249,22 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 268950084;
-			PBXWorkspaceStateSaveDate = 268950084;
+			PBXPerProjectTemplateStateSaveDate = 269134721;
+			PBXWorkspaceStateSaveDate = 269134721;
 		};
 		perUserProjectItems = {
-			0A52B52C1007DA48008AD8D8 /* PBXTextBookmark */ = 0A52B52C1007DA48008AD8D8 /* PBXTextBookmark */;
-			0A52B52D1007DA48008AD8D8 /* PlistBookmark */ = 0A52B52D1007DA48008AD8D8 /* PlistBookmark */;
-			0A8D7B05100586460017E480 = 0A8D7B05100586460017E480 /* PBXTextBookmark */;
-			0A8D7B07100586460017E480 = 0A8D7B07100586460017E480 /* PBXTextBookmark */;
-			0A8D7B09100586460017E480 = 0A8D7B09100586460017E480 /* PBXTextBookmark */;
-			0A8D7B0E100586460017E480 = 0A8D7B0E100586460017E480 /* PBXTextBookmark */;
-			0A8D7B17100587FA0017E480 = 0A8D7B17100587FA0017E480 /* PBXTextBookmark */;
-			0A8D7B22100588C90017E480 = 0A8D7B22100588C90017E480 /* PBXTextBookmark */;
-			0A8D7B2E10063CB60017E480 = 0A8D7B2E10063CB60017E480 /* PBXTextBookmark */;
-			0A8D7B2F10063CB60017E480 = 0A8D7B2F10063CB60017E480 /* PBXTextBookmark */;
-			0A8D7B3010063CB60017E480 = 0A8D7B3010063CB60017E480 /* PlistBookmark */;
-			0A8D7B3110063CB60017E480 = 0A8D7B3110063CB60017E480 /* PBXTextBookmark */;
-			0A8D7B3210063CB60017E480 = 0A8D7B3210063CB60017E480 /* PlistBookmark */;
+			0A361D24100BE5BB00A71779 /* PBXTextBookmark */ = 0A361D24100BE5BB00A71779 /* PBXTextBookmark */;
+			0A361D25100BE5BB00A71779 /* PBXTextBookmark */ = 0A361D25100BE5BB00A71779 /* PBXTextBookmark */;
+			0A361D26100BE5BB00A71779 /* PBXTextBookmark */ = 0A361D26100BE5BB00A71779 /* PBXTextBookmark */;
+			0A361D27100BE5BB00A71779 /* PBXTextBookmark */ = 0A361D27100BE5BB00A71779 /* PBXTextBookmark */;
+			0A361D28100BE5BB00A71779 /* PBXTextBookmark */ = 0A361D28100BE5BB00A71779 /* PBXTextBookmark */;
+			0A76900210091D8C000639DA /* PlistBookmark */ = 0A76900210091D8C000639DA /* PlistBookmark */;
+			0A76900310091D8C000639DA /* PBXTextBookmark */ = 0A76900310091D8C000639DA /* PBXTextBookmark */;
+			0A76900510091D8C000639DA /* PlistBookmark */ = 0A76900510091D8C000639DA /* PlistBookmark */;
+			0A76900610091D8C000639DA /* PBXTextBookmark */ = 0A76900610091D8C000639DA /* PBXTextBookmark */;
+			0A8D7B05100586460017E480 /* PBXTextBookmark */ = 0A8D7B05100586460017E480 /* PBXTextBookmark */;
+			0A8D7B09100586460017E480 /* PBXTextBookmark */ = 0A8D7B09100586460017E480 /* PBXTextBookmark */;
+			0A8D7B0E100586460017E480 /* PBXTextBookmark */ = 0A8D7B0E100586460017E480 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 0A8D7AC710057A620017E480 /* Source Control */;
 		userBuildSettings = {
