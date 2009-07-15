@@ -16,7 +16,4 @@
 	NSString *recorderFilePath;
 }
 
-- (void)record;
-- (void)stop;
-
 @end
