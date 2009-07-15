@@ -7,14 +7,23 @@
 //
 
 #import "FlipsideViewController.h"
-#import "Sample.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+#import <CoreAudio/CoreAudioTypes.h>
+#import <AVFoundation/AVFoundation.h>
+
+
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, AVAudioRecorderDelegate> {
 	BOOL recording;
-	Sample *sample;
+
+	AVAudioRecorder *recorder;
+	NSString *recorderFilePath;
+	NSString *test;
 }
 
 - (IBAction)showInfo;
 - (IBAction)recordOrStop:(UIButton *)button;
+
+- (void)record;
+- (void)stop;
 
 @end
