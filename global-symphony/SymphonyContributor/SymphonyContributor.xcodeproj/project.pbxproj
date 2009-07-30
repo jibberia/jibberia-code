@@ -25,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2F1861100E8910001E0377 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		0A2F1862100E8910001E0377 /* libPMAnalytics-r67.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPMAnalytics-r67.a"; sourceTree = "<group>"; };
+		0A2F1864100E895B001E0377 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A2F1868100E8961001E0377 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		0A2F186A100E896C001E0377 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0A52B551100BE977008AD8D8 /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
 		0A52B552100BE977008AD8D8 /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
 		0A8D7AF4100585390017E480 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +82,18 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		0A2F1860100E8906001E0377 /* Pinch Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				0A2F1861100E8910001E0377 /* Beacon.h */,
+				0A2F1862100E8910001E0377 /* libPMAnalytics-r67.a */,
+				0A2F1868100E8961001E0377 /* libsqlite3.dylib */,
+				0A2F1864100E895B001E0377 /* CoreLocation.framework */,
+				0A2F186A100E896C001E0377 /* SystemConfiguration.framework */,
+			);
+			name = "Pinch Analytics";
+			sourceTree = "<group>";
+		};
 		0A52B550100BE946008AD8D8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +136,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0A2F1860100E8906001E0377 /* Pinch Analytics */,
 				0A52B550100BE946008AD8D8 /* Sample */,
 				289233A00DB2D0730083E9F9 /* Main View */,
 				281C6CD70DB2D82200F60ACC /* Flipside View */,
@@ -127,7 +145,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				0A8DACD8100BEC27007E399F /* CoreAudio.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A8DACD8100BEC27007E399F /* CoreAudio.framework */,
 				0A8D7AF4100585390017E480 /* AVFoundation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -248,6 +266,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SymphonyContributor_Prefix.pch;
 				INFOPLIST_FILE = "SymphonyContributor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = SymphonyContributor;
 			};
 			name = Debug;
@@ -260,6 +282,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SymphonyContributor_Prefix.pch;
 				INFOPLIST_FILE = "SymphonyContributor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = SymphonyContributor;
 			};
 			name = Release;
@@ -272,6 +298,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.0;
 			};
@@ -285,6 +312,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.0;
 			};
