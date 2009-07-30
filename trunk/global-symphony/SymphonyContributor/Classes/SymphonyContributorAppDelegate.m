@@ -9,15 +9,18 @@
 #import "SymphonyContributorAppDelegate.h"
 #import "MainViewController.h"
 
-@implementation SymphonyContributorAppDelegate
+#import "Beacon.h"
 
+@implementation SymphonyContributorAppDelegate
 
 @synthesize window;
 @synthesize mainViewController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    
+	
+//	[Beacon initAndStartBeaconWithApplicationCode:@"915c66a20d48d0c877ed5f2ab9a08ada" useCoreLocation:YES useOnlyWiFi:NO];
+	
 	MainViewController *aController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
 	self.mainViewController = aController;
 	[aController release];
@@ -27,6 +30,9 @@
     [window makeKeyAndVisible];
 }
 
+//- (void)applicationWillTerminate:(UIApplication *)a {
+//	[Beacon endBeacon];
+//}
 
 - (void)dealloc {
     [mainViewController release];

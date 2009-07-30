@@ -12,6 +12,8 @@
 
 @implementation MainViewController
 
+@synthesize playBtn;
+@synthesize loopSwitch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -24,7 +26,7 @@
 
 - (IBAction)recordOrStop:(UIButton *)button {
 	recording = !recording;
-
+	
 	if (recording) {
 		[button setTitle:@"Stop" forState:UIControlStateNormal];
 		[self record];
@@ -34,7 +36,38 @@
 	}
 }
 
+- (IBAction)test:(id)sender {
+	if (loopSwitch.on) NSLog(@"Yes, should loop");
+	else NSLog(@"No, should NOT loop.");
+}
 
+- (IBAction)play {//:(UIButton *)button {
+	NSLog(@"play");
+	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+	NSError *err = nil;
+	
+	[audioSession setCategory:AVAudioSessionCategoryPlayback error:&err];
+	if (err) {
+        NSLog(@"audioSession error: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        return;
+	}
+	
+	[audioSession setActive:YES error:&err];
+	if (err) {
+        NSLog(@"audioSession error: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        return;
+	}
+	
+	NSLog(@"fileURL: %@", (NSString *)recordURL);
+	AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:recordURL error:&err];
+	if (err) {
+        NSLog(@"audioSession error: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        return;
+	}
+	player.delegate = self;
+	[player prepareToPlay];
+	[player play];
+}
 
 // http://stackoverflow.com/questions/1010343/how-do-i-record-audio-on-iphone-with-avaudiorecorder
 - (void)record {
@@ -76,13 +109,13 @@
 	int ts = (int)[[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSince1970];
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	recorderFilePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.caf", ts]];
+	NSString *recorderFilePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.caf", ts]];
+
+	NSLog(@"recorderFilePath: %@", [recorderFilePath stringByReplacingOccurrencesOfString:@" " withString:@"\\ "]);
 	
-	NSLog(@"recorderFilePath: %@", recorderFilePath);
-	
-	NSURL *url = [NSURL fileURLWithPath:recorderFilePath];
+	recordURL = [NSURL fileURLWithPath:recorderFilePath];
 	err = nil;
-	recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
+	recorder = [[AVAudioRecorder alloc] initWithURL:recordURL settings:recordSetting error:&err];
 	if (!recorder) {
         NSLog(@"recorder: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
         UIAlertView *alert =
@@ -124,13 +157,14 @@
 	
 	[recorder stop];
 	
-	NSURL *url = [NSURL fileURLWithPath: recorderFilePath];
 	NSError *err = nil;
-	NSData *audioData = [NSData dataWithContentsOfFile:[url path] options: 0 error:&err];
+	NSData *audioData = [NSData dataWithContentsOfFile:[recordURL path] options: 0 error:&err];
 	if(!audioData)
         NSLog(@"audio data: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-	else
+	else {
 		NSLog(@"apparently got data successfully");
+		playBtn.enabled = YES;
+	}
 	/*
 	NSFileManager *fm = [NSFileManager defaultManager];
 	
@@ -169,6 +203,31 @@
 	NSLog(@"[%@ audioRecorderEndInterruption:%@]", [self class], aRecorder);
 }
 
+
+
+/* audioPlayerDidFinishPlaying:successfully: is called when a sound has finished playing. This method is NOT called if the player is stopped due to an interruption. */
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+	NSLog(@"[%@ audioPlayerDidFinishPlaying:%@ successfully:%d]", [self class], player, flag);
+	if (loopSwitch.on) {
+		[self play];
+	}
+}
+
+/* if an error occurs while decoding it will be reported to the delegate. */
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+	NSLog(@"[%@ audioPlayerDecodeErrorDidOccur:%@ error:%@]", [self class], player, error);
+}
+
+/* audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing. The player will have been paused. */
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player {
+	NSLog(@"[%@ audioPlayerBeginInterruption:%@]", [self class], player);
+}
+
+/* audioPlayerEndInterruption: is called when the audio session interruption has ended and this player had been interrupted while playing. 
+ The player can be restarted at this point. */
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player {
+	NSLog(@"[%@ audioPlayerEndInterruption:%@]", [self class], player);
+}
 
 
 
@@ -231,7 +290,6 @@
 
 - (void)dealloc {
     [super dealloc];
-	[recorderFilePath release];
 }
 
 

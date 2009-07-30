@@ -12,12 +12,15 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, AVAudioRecorderDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate> {
 	BOOL recording;
+	BOOL shouldLoop;
 
 	AVAudioRecorder *recorder;
-	NSString *recorderFilePath;
-	NSString *test;
+	NSURL *recordURL;
+	
+	UIButton *playBtn;
+	UISwitch *loopSwitch;
 }
 
 - (IBAction)showInfo;
@@ -25,5 +28,12 @@
 
 - (void)record;
 - (void)stop;
+//- (void)upload;
+
+@property (nonatomic, retain) IBOutlet UIButton *playBtn;
+- (IBAction)play;//:(UIButton *)button;
+
+@property (nonatomic, retain) IBOutlet UISwitch *loopSwitch;
+- (IBAction)test:(id)sender;
 
 @end
