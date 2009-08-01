@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -326,12 +324,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainView.m</string>
+								<string>MainViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -339,11 +339,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainView.m</string>
+										<string>MainViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A97751B1021144F00A0E0D1</string>
+										<string>0A97754E102160B200A0E0D1</string>
 										<key>history</key>
 										<array>
 											<string>0A35540E100D4D4400AD643E</string>
@@ -354,11 +354,11 @@
 											<string>0AE5A5251018044C00C57785</string>
 											<string>0AE5A5261018044C00C57785</string>
 											<string>0AE5A54D1018066F00C57785</string>
-											<string>0A977434101D2D9900A0E0D1</string>
-											<string>0A9775121021144F00A0E0D1</string>
 											<string>0A9775131021144F00A0E0D1</string>
 											<string>0A9775141021144F00A0E0D1</string>
-											<string>0A9775161021144F00A0E0D1</string>
+											<string>0A97751F1021518A00A0E0D1</string>
+											<string>0A97753F102156FB00A0E0D1</string>
+											<string>0A977540102156FB00A0E0D1</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -389,6 +389,23 @@
 											<string>0A9775171021144F00A0E0D1</string>
 											<string>0A9775181021144F00A0E0D1</string>
 											<string>0A9775191021144F00A0E0D1</string>
+											<string>0A9775221021518A00A0E0D1</string>
+											<string>0A9775231021518A00A0E0D1</string>
+											<string>0A9775241021518A00A0E0D1</string>
+											<string>0A977528102151E300A0E0D1</string>
+											<string>0A977529102151E300A0E0D1</string>
+											<string>0A977534102153DF00A0E0D1</string>
+											<string>0A977535102153DF00A0E0D1</string>
+											<string>0A97753B1021541E00A0E0D1</string>
+											<string>0A97753C1021541E00A0E0D1</string>
+											<string>0A977541102156FB00A0E0D1</string>
+											<string>0A977542102156FB00A0E0D1</string>
+											<string>0A977543102156FB00A0E0D1</string>
+											<string>0A977544102156FB00A0E0D1</string>
+											<string>0A977545102156FB00A0E0D1</string>
+											<string>0A977546102156FB00A0E0D1</string>
+											<string>0A977547102156FB00A0E0D1</string>
+											<string>0A977548102156FB00A0E0D1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
