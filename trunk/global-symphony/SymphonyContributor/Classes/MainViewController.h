@@ -18,9 +18,11 @@
 
 	AVAudioRecorder *recorder;
 	NSURL *recordURL;
+	NSMutableURLRequest *request;
 	
 	UIButton *playBtn;
 	UISwitch *loopSwitch;
+	UIButton *uploadBtn;
 }
 
 - (IBAction)showInfo;
@@ -28,12 +30,14 @@
 
 - (void)record;
 - (void)stop;
-//- (void)upload;
 
 @property (nonatomic, retain) IBOutlet UIButton *playBtn;
 - (IBAction)play;//:(UIButton *)button;
 
 @property (nonatomic, retain) IBOutlet UISwitch *loopSwitch;
 - (IBAction)test:(id)sender;
+
+@property (nonatomic, retain) IBOutlet UIButton *uploadBtn;
+- (IBAction)upload;
 
 @end

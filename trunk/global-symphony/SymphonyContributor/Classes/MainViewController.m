@@ -14,6 +14,7 @@
 
 @synthesize playBtn;
 @synthesize loopSwitch;
+@synthesize uploadBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -34,6 +35,31 @@
 		[button setTitle:@"Record" forState:UIControlStateNormal];
 		[self stop];
 	}
+}
+
+// http://stackoverflow.com/questions/936855/file-upload-to-http-server-in-iphone-programming
+- (IBAction)upload {
+	NSLog(@"upload");
+	NSString *urlString = @"http://localhost:8000/samples/add";
+	NSString *filename = @"test.caf";
+	
+	request= [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+	NSString *boundary = @"---------------------------14737809831466499882746641449";
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+	NSMutableData *postbody = [NSMutableData data];
+	[postbody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postbody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n", filename] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postbody appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postbody appendData:[NSData dataWithData:[NSData dataWithContentsOfURL:recordURL]]];
+	[postbody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[request setHTTPBody:postbody];
+	
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	NSLog(returnString);
 }
 
 - (IBAction)test:(id)sender {
@@ -164,6 +190,7 @@
 	else {
 		NSLog(@"apparently got data successfully");
 		playBtn.enabled = YES;
+		uploadBtn.enabled = YES;
 	}
 	/*
 	NSFileManager *fm = [NSFileManager defaultManager];
