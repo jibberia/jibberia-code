@@ -4,13 +4,13 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('kevin', 'kevintcox@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'symphony.db'#'symphony_server'             # Or path to database file if using sqlite3.
+DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = 'symphony_server'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'symphony'             # Not used with sqlite3.
 DATABASE_PASSWORD = 'argon412'         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -46,6 +46,9 @@ MEDIA_URL = ''
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
+
+MEDIA_URL = '/static'
+MEDIA_ROOT = '/Users/kevin/src/jibberia-code/global-symphony/server/uploads'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '^ljo=w^880)36h5g2*q=p#ff$*hq2-c$i(trr%wxyu8)l)8#ok'
