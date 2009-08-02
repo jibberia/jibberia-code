@@ -7,14 +7,20 @@
  */
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import <CoreLocation/CoreLocation.h>
+#import "ASIFormDataRequest.h"
 
-@interface AudioRecorder : NSObject<AVAudioRecorderDelegate>
+@interface AudioRecorder : NSObject<AVAudioRecorderDelegate, CLLocationManagerDelegate>
 {
 	AVAudioRecorder *mRecorder;
 	BOOL recording;
 	NSString *errorString;
 	NSURL *mRecordURL;
 
+	CLLocationManager *locationManager;
+	CLLocation *location;
+	
+	ASIFormDataRequest *request;
 }
 
 typedef enum 
@@ -32,6 +38,9 @@ typedef enum
 - (RecorderErrors)recordStop;
 - (NSString*)errorString;
 - (NSString*)filePathStr;
+- (void)upload;
+- (void)startUpdatingLocation;
+- (void)invalidateLocation;
 
 @property (nonatomic, retain) NSString *errorString;
 @property BOOL recording;

@@ -16,6 +16,8 @@
 
 - (id)init {
     if (self = [super init]) {
+		locationManager = [[CLLocationManager alloc] init];
+		locationManager.delegate = self;
     }
     return self;
 }
@@ -125,5 +127,33 @@
 	NSLog(@"[%@ audioRecorderEndInterruption:%@]", [self class], aRecorder);
 }
 
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+	[manager stopUpdatingLocation];
+	location = [newLocation copy];
+}
+
+- (void)upload {
+	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]];
+	[request setFile:[self filePathStr] forKey:@"file"];
+	[request setPostValue:@"TODO" forKey:@"name"];
+	if (location != nil) {
+		
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"lon"];
+	}
+	[request start];
+}	
+
+- (void)startUpdatingLocation {
+	// skip location services if the user has disabled Location Services in General Settings
+	// this is so we don't pop up nag messages to turn it on
+	if (locationManager.locationServicesEnabled) {
+		[locationManager startUpdatingLocation];
+	}
+}
+- (void)invalidateLocation {
+	location = nil;
+}
 
 @end
