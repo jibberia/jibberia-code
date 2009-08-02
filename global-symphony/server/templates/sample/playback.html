@@ -51,14 +51,13 @@ $(function(){
                         var progressColor = pastelArray[startingIndex];
                         startingIndex = (startingIndex + 1) % pastelArray.length;
                         mySound.backgroundColor = backgroundColor;
-                        var html = '<div class="loop_toggle" style="background-color:' + progressColor 
-                            + '" id="loop_' + id + '"><input type="checkbox" id="checkbox_' + 
-                            id + '"/></div><div id="' + id + '" class="player_wrapper">' +
+                        var html = '<div id="' + id + '" class="player_wrapper"><div class="loop_toggle" style="background-color:' + progressColor 
+                            + '" id="loop_' + id + '"></div>' +
                             '<div class="progress" style="background-color:' + progressColor + 
                             '"></div><div class="player" style="background-color:' + backgroundColor + '"><p>' + data.name + 
                             '</p></div></div>';
                         $('.samples').append(html);
-                        var checkboxSel = $('#checkbox_' + id);
+
                         $('#loop_' + id).bind('click', function(){
                             if(mySound.loop) {
                                 mySound.loop = false;
@@ -71,6 +70,13 @@ $(function(){
                         $('#' + id).bind('click', function() {
                             soundManager.togglePause(id);
                         });
+                        
+                        var players = $('div.player_wrapper');
+                        var viewportHeight = window.innerHeight;
+                        var playerHeight = (viewportHeight/players.size()) - 1;
+                        players.animate({ 
+                            height: playerHeight + 'px'
+                          }, 300 );
                     }
                 }
             });
