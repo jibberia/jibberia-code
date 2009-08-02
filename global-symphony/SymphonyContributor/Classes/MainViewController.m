@@ -17,7 +17,7 @@
 @synthesize loopSwitch;
 @synthesize uploadBtn;
 @synthesize progressDealie;
-
+@synthesize nameField;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -47,6 +47,7 @@
 
 - (IBAction)upload {
 	[progressDealie startAnimating];
+	mAudioRecorder.name = [nameField text];
 	[mAudioRecorder upload];
 	[progressDealie stopAnimating];
 }
@@ -152,8 +153,10 @@
 	[controller release];
 }
 
-
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
+}
 /*
  // Override to allow orientations other than the default portrait orientation.
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

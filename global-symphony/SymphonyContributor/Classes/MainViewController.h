@@ -13,12 +13,13 @@
 @class AudioRecorder;
 @class AudioPlayer;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UITextFieldDelegate> {
 	BOOL recording;
 	BOOL shouldLoop;
 
 	NSURL *mRecordURL;
 	
+	UITextField *nameField;
 	UIButton *playBtn;
 	UISwitch *loopSwitch;
 	UIButton *uploadBtn;
@@ -44,4 +45,5 @@
 
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *progressDealie;
 
+@property (nonatomic, retain) IBOutlet UITextField *nameField;
 @end
