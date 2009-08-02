@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # Example:
     # (r'^server/', include('server.foo.urls')),
     (r'^samples/add', add_sample),
+    (r'^samples/', include('sample.urls')),
     (r'^samples/random', random_sample),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
@@ -18,6 +19,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.SITE_MEDIA_ROOT}),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
