@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block extra_css_block %}
+<link rel="stylesheet" href="/site_media/css/player.css" type="text/css" media="screen" />    
+{% endblock %}
+
+{% block extra_js_block %}
+<script type="text/javascript">
+  
+soundManager.url = '/site_media/swf/'; // directory where SM2 .SWFs live
+soundManager.debugMode = false;
+soundManager.defaultOptions.usePeakData = true;
+soundManager.defaultOptions.useWaveformData = true;
+soundManager.defaultOptions.useEQData = true;
+soundManager.defaultOptions.allowPolling = true;
+soundManager.defaultOptions.useFastPolling = true;// fast timer=higher callback frequency, combine w/useHighPerformance
+soundManager.defaultOptions.useHighPerformance = true;// position:fixed flash movie for faster JS/flash callbacks
+
+var loadedSamples = Array();
+$(function(){
+    
+    
+    
+    $('#add_sample_button').bind('click', function() {
+        var excludeString = loadedSamples.join(',');
+    
+        $.getJSON("/samples/random?exclude=[" + excludeString + "]", function(data) {
+            soundManager.onready(function(oStatus) {
+                if (oStatus.success) {
+                    if(data.error == undefined) {
+                        loadedSamples.push(data.id);
+                        var id = "sample-" + data.id;
+                        var mySound = soundManager.createSound({
+                            id: id,
+                            url: data.url,
+                            onfinish: function() {
+                                if(this.loop) 
+                                    this.play();
+                            },
+                            whileplaying:function() {
+                                var peak = (this.peakData.left + this.peakData.right) / 2.0;
+                                console.log(this.peakData);
+                                $('#' + id).width(500 + (peak * 500));
+                            }
+                        });
+
+                        var html = '<div id="' + id + '" class="player"><p>' + data.name + '</p><p><input type="checkbox" id="checkbox_' + id + '"/>Loop</p></div>';
+                        $('.samples').append(html);
+                        var checkboxSel = $('#checkbox_' + id);
+                        checkboxSel.bind('click', function(){
+                            if(checkboxSel.attr('checked') == true) {
+                                mySound.loop = true;
+                            } else {
+                                mySound.loop = false;
+                            }
+                        })
+                        $('#' + id).bind('click', function() {
+                            console.log('toggle sound: ' + id);
+                            soundManager.togglePause(id);
+                        });
+                    }
+                }
+            });
+        });
+    });
+});
+
+</script
+{% endblock %}
+
+{% block main_block %}
+<h1>Play Stuff</h1>
+
+<input id="add_sample_button" type="image" src="/site_media/images/add_sample.png"/>
+
+<div class="samples">
+
+</div>
+
+{% endblock %}
