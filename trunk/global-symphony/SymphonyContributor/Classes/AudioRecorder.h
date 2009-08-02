@@ -18,6 +18,7 @@
 	NSURL *mRecordURL;
 	CLLocationManager *locationManager;
 	CLLocation *location;
+	NSString *name;
 	
 	ASIFormDataRequest *request;
 	UIActivityIndicatorView *progressDealie;
@@ -47,6 +48,8 @@ typedef enum
 
 @property (nonatomic, retain) NSString *errorString;
 @property BOOL recording;
+@property (nonatomic, retain) NSString *name;
+
 @property BOOL musical;
 
 @end

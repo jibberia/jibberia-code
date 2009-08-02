@@ -13,12 +13,14 @@
 
 @synthesize errorString;
 @synthesize recording;
+@synthesize name;
 @synthesize musical;
 
 - (id)init {
     if (self = [super init]) {
 		locationManager = [[CLLocationManager alloc] init];
 		locationManager.delegate = self;
+		self.name = @"Untitled Sample";
     }
     return self;
 }
@@ -144,9 +146,13 @@
 - (void)upload {
 	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/samples/add"]];
 	[request setFile:[self filePathStr] forKey:@"file"];
+<<<<<<< .mine
+	[request setPostValue:self.name forKey:@"name"];
+=======
 	if (musical) [request setPostValue:@"true"  forKey:@"musical"];
 	else         [request setPostValue:@"false" forKey:@"musical"];
 	[request setPostValue:@"TODO" forKey:@"name"];
+>>>>>>> .r54
 	if (location != nil) {
 		
 		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];
