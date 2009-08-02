@@ -149,8 +149,8 @@
 	[request setFile:[self filePathStr] forKey:@"file"];
 	[request setPostValue:self.name forKey:@"name"];
 
-	if (musical) [request setPostValue:@"1"  forKey:@"musical"];
-	else         [request setPostValue:@"0" forKey:@"musical"];
+	if (musical) [request setPostValue:@"True"  forKey:@"musical"];
+	else         [request setPostValue:@"False" forKey:@"musical"];
 	
 	if (location != nil) {
 		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];

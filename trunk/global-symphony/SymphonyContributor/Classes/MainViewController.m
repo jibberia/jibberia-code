@@ -25,7 +25,7 @@
         // Custom initialization
 		mAudioRecorder = [[AudioRecorder alloc] init];
 		mAudioPlayer = [[AudioPlayer alloc] init];
-		mAudioRecorder.musical = NO;
+		mAudioRecorder.musical = YES;
     }
     return self;
 }
