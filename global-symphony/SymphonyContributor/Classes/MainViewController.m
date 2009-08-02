@@ -30,6 +30,8 @@
 }
 
 - (IBAction)recordOrStop:(UIButton *)button {
+
+	[mAudioRecorder setProgressDealie:progressDealie];
 	
 	if (mAudioRecorder.recording) {
 		[self stop];

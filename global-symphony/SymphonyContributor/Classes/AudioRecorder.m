@@ -22,6 +22,10 @@
     return self;
 }
 
+- (void)setProgressDealie:(UIActivityIndicatorView*)theProgressDealie {
+	progressDealie = [theProgressDealie retain];
+}
+
 - (RecorderErrors)recordToUrl:(NSURL*)recordUrl
 {
 	NSLog(@"record start");
@@ -131,6 +135,9 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 	[manager stopUpdatingLocation];
 	location = [newLocation copy];
+	if (progressDealie != nil) {
+		[progressDealie stopAnimating];
+	}
 }
 
 - (void)upload {
@@ -149,6 +156,9 @@
 	// skip location services if the user has disabled Location Services in General Settings
 	// this is so we don't pop up nag messages to turn it on
 	if (locationManager.locationServicesEnabled) {
+		if (progressDealie != nil) {
+			[progressDealie startAnimating];
+		}
 		[locationManager startUpdatingLocation];
 	}
 }

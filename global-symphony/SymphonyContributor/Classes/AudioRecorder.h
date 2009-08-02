@@ -21,6 +21,7 @@
 	CLLocation *location;
 	
 	ASIFormDataRequest *request;
+	UIActivityIndicatorView *progressDealie;
 }
 
 typedef enum 
@@ -34,6 +35,7 @@ typedef enum
 	
 } RecorderErrors;
 
+- (void)setProgressDealie:(UIActivityIndicatorView*)theProgressDealie;
 - (RecorderErrors)recordToUrl:(NSURL*)file;
 - (RecorderErrors)recordStop;
 - (NSString*)errorString;
