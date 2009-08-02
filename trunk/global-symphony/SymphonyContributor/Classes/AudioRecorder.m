@@ -144,13 +144,15 @@
 }
 
 - (void)upload {
-	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8198/samples/add"]];
+	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8198/samples/add"]]; // jibberia.dyndns.org
+	
 	[request setFile:[self filePathStr] forKey:@"file"];
 	[request setPostValue:self.name forKey:@"name"];
-	if (musical) [request setPostValue:@"true"  forKey:@"musical"];
-	else         [request setPostValue:@"false" forKey:@"musical"];
+
+	if (musical) [request setPostValue:@"1"  forKey:@"musical"];
+	else         [request setPostValue:@"0" forKey:@"musical"];
+	
 	if (location != nil) {
-		
 		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];
 		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"lon"];
 	}
