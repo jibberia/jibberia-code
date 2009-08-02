@@ -32,19 +32,33 @@ soundManager.defaultOptions.useHighPerformance = true;// position:fixed flash mo
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     
     google.maps.event.addListener(map, 'click', function(pos) {
+        var bounds = map.get_bounds();
+        var ne = bounds.getNorthEast();
+        var sw = bounds.getSouthWest();
+        var h = ne.lng() - sw.lng();
+        var w = ne.lat() - sw.lat();
+        var hypotenuse = Math.sqrt((w * w) + (h * h));
+        
+        console.log("hypotenuse: "+hypotenuse);
+        
         pos = pos.latLng;
-        plat = pos.lat() * 1;
-        plng = pos.lng() * 1;
+        var plat = pos.lat() * 1;
+        var plng = pos.lng() * 1;
         for (i in markers) {
             var marker = markers[i];
-            mlat = marker.position.lat() * 1;
-            mlng = marker.position.lng() * 1;
-            dlat = mlat - plat;
-            dlng = mlng - plng;
+            // skip markers that are off screen:
+            if (!bounds.contains(marker.position))
+                continue;
+            var mlat = marker.position.lat() * 1;
+            var mlng = marker.position.lng() * 1;
+            var dlat = mlat - plat;
+            var dlng = mlng - plng;
             dist = Math.sqrt((dlat * dlat) + (dlng * dlng));
+            // normalize to hypotenuse:
+            dist = dist / hypotenuse;
             console.log(dist);
             
-            if (dist < 1.0) {
+            if (dist < 0.25) {
                 soundManager.play(marker.soundId);
             }
         }
@@ -64,7 +78,7 @@ soundManager.defaultOptions.useHighPerformance = true;// position:fixed flash mo
   
   function getSample() {
       var excludeString = loadedSamples.join(',');
-      $.getJSON("/samples/random?exclude=[" + excludeString + "]&with_location=true", function(sample) {
+      $.getJSON("/samples/random?exclude=[" + excludeString + "]&with_location=true&musical=false", function(sample) {
           if (sample.error == undefined) {
               loadedSamples.push(sample.id);
               var myLatlng = new google.maps.LatLng(sample.lat, sample.lon);
