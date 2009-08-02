@@ -38,13 +38,14 @@ $(function(){
                                     this.play();
                             },
                             whileplaying:function() {
-                                var peak = (this.peakData.left + this.peakData.right) / 2.0;
-                                console.log(this.peakData);
-                                $('#' + id).width(500 + (peak * 500));
+                                var progress = (this.position / this.durationEstimate) * 100;
+                                $('#' + id + ' .progress').css("width", progress + '%');
                             }
                         });
 
-                        var html = '<div id="' + id + '" class="player"><p>' + data.name + '</p><p><input type="checkbox" id="checkbox_' + id + '"/>Loop</p></div>';
+                        var html = '<div id="' + id + '" class="player_wrapper"><input type="checkbox" id="checkbox_' + 
+                        id + '"/><div class="progress"></div><div class="player"><p>' + data.name + 
+                        '</p></div></div>';
                         $('.samples').append(html);
                         var checkboxSel = $('#checkbox_' + id);
                         checkboxSel.bind('click', function(){
