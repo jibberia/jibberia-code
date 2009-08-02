@@ -3,6 +3,7 @@ from sample.forms import SampleForm
 from sample.models import *
 from django.utils import simplejson
 from django.conf import settings
+from django.core.files import File
 
 def add_sample(request):
     if request.method == 'GET':
@@ -11,12 +12,14 @@ def add_sample(request):
         form = SampleForm(request.POST, request.FILES)
         resp = ''
         if form.is_valid():
-            print "no errors"
-            resp += "<h1>saved</h1><br>"
+            resp += "success"
             form.save()
+            sample = form.instance
+            sample.transcode_to_mp3()
+            sample.save()
         else:
             resp += str(repr(form.errors))
-        resp += '<pre>' + repr(form).replace('<', '&lt;').replace('>', '&gt;') + '\n\n\n' + str(dir(form));
+        print resp
         return HttpResponse(resp)
 
 def random_sample(request):
