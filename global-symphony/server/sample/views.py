@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from sample.forms import SampleForm
 from sample.models import *
-from django.core import serializers
 from django.utils import simplejson
 from django.conf import settings
 
