@@ -32,6 +32,8 @@ def random_sample(request):
     
     if request.GET.has_key('musical'):
         samples = samples.filter(musical=True)
+        
+    samples = samples.exclude(lat=None).exclude(lon=None)
 
     samples = samples.order_by('?')[:1]
     
