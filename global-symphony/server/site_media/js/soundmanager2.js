@@ -15,7 +15,7 @@ var soundManager = null;
 function SoundManager(smURL,smID) {
  
   this.flashVersion = 8;           // version of flash to require, either 8 or 9. Some API features require Flash 9.
-  this.debugMode = true;           // enable debugging output (div#soundmanager-debug, OR console if available + configured)
+  this.debugMode = false;           // enable debugging output (div#soundmanager-debug, OR console if available + configured)
   this.useConsole = true;          // use firebug/safari console.log()-type debug console if available
   this.consoleOnly = false;        // if console is being used, do not create/write to #soundmanager-debug
   this.waitForWindowLoad = false;  // force SM2 to wait for window.onload() before trying to call soundManager.onload()
@@ -28,6 +28,7 @@ function SoundManager(smURL,smID) {
   this.flashLoadTimeout = 1000;    // msec to wait for flash movie to load before failing (0 = infinity)
   this.wmode = null;	   		   // mode to render the flash movie in - null, transparent, opaque (last two allow layering of HTML on top)
   this.allowFullScreen = true;     // enter full-screen (via double-click on movie) for flash 9+ video
+  this.url = '/site_media/swf/'
 
   this.defaultOptions = {
     'autoLoad': false,             // enable automatic loading (otherwise .load() will be called on demand with .play(), the latter being nicer on bandwidth - if you want to .load yourself, you also can)
