@@ -3,27 +3,24 @@
 }
 
 .loop_toggle {
-    float:          left;
+    position: 		absolute;
     width:          3%;
-    height:         75px;
+    height:         100%;
     background:     #FFFFFF url('/site_media/images/stripe.png') repeat;
-}
-
-input[type=checkbox] {
-    display:        none;
+	z-index:		200;
 }
 
 .player_wrapper {
-    float:          left;
-    width:          97%;
-    height:         75px;
+    width:          100%;
+    height:         0px;
+	border-bottom:  1px solid #aaa;
+	position:		relative;
 }
 
 .player {
     margin:         0;
     font-size:      2.5em;
-    height:         75px;
-    margin-top:     -75px;
+    height:         100%;
     opacity:        1;
     width:          97%;
     line-height:    2.5em;
@@ -38,6 +35,14 @@ input[type=checkbox] {
 
 .progress {
     width:          0%;
-    height:         75px;
     opacity:        .5;
+	height:			100%;
+	position: 		absolute;
+}
+
+#add_sample_button {
+	position: absolute;
+	top: 10px;
+	left: 1000px;
+	z-index: 500;
 }
