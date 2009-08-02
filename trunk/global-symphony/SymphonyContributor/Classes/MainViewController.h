@@ -7,26 +7,28 @@
 //
 
 #import "FlipsideViewController.h"
+ 
 
-#import <CoreAudio/CoreAudioTypes.h>
-#import <AVFoundation/AVFoundation.h>
+@class AudioRecorder;
+@class AudioPlayer;
 
-
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	BOOL recording;
 	BOOL shouldLoop;
 
-	AVAudioRecorder *recorder;
-	NSURL *recordURL;
+	NSURL *mRecordURL;
 	NSMutableURLRequest *request;
 	
 	UIButton *playBtn;
 	UISwitch *loopSwitch;
 	UIButton *uploadBtn;
+	AudioRecorder *mAudioRecorder;
+	AudioPlayer *mAudioPlayer;
 }
 
 - (IBAction)showInfo;
 - (IBAction)recordOrStop:(UIButton *)button;
+- (IBAction)loopSwitchPress:(UISwitch *)button;
 
 - (void)record;
 - (void)stop;

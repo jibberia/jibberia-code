@@ -9,8 +9,6 @@
 #import "SymphonyContributorAppDelegate.h"
 #import "MainViewController.h"
 
-#import "Beacon.h"
-
 @implementation SymphonyContributorAppDelegate
 
 @synthesize window;
