@@ -100,6 +100,8 @@ const int kMaxPunchOutTimeRand = 15; // seconds
 
 	[self performSelector:@selector(punchOut:) withObject:nil afterDelay:value];
 	
+	[mAudioRecorder startUpdatingLocation];
+	
 	[mAudioRecorder recordToUrl:mRecordURL];
 }
 
