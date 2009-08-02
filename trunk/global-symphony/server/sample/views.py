@@ -41,7 +41,9 @@ def random_sample(request):
         sample_ret_obj = {
             "id": sample.id,
             "name": sample.name,
-            "url": settings.MEDIA_URL + sample.file.url
+            "url": settings.MEDIA_URL + sample.file.url,
+            "latitude": str(sample.latitude),
+            "longitude": str(sample.longitude)
         }
     
     return HttpResponse(simplejson.dumps(sample_ret_obj))
