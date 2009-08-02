@@ -7,7 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
- 
+#import "ASIFormDataRequest.h"
 
 @class AudioRecorder;
 @class AudioPlayer;
@@ -17,7 +17,8 @@
 	BOOL shouldLoop;
 
 	NSURL *mRecordURL;
-	NSMutableURLRequest *request;
+//	NSString *recorderFilePath;
+	ASIFormDataRequest *request;
 	
 	UIButton *playBtn;
 	UISwitch *loopSwitch;

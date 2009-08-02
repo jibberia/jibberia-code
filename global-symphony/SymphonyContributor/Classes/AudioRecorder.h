@@ -31,6 +31,7 @@ typedef enum
 - (RecorderErrors)recordToUrl:(NSURL*)file;
 - (RecorderErrors)recordStop;
 - (NSString*)errorString;
+- (NSString*)filePathStr;
 
 @property (nonatomic, retain) NSString *errorString;
 @property BOOL recording;

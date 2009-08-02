@@ -97,6 +97,10 @@
 	return kRecorderNoError;
 }
 
+- (NSString *)filePathStr {
+	return [mRecordURL path];
+}
+
 /* audioRecorderDidFinishRecording:successfully: is called when a recording has been finished or stopped. This method is NOT called if the recorder is stopped due to an interruption. */
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)aRecorder successfully:(BOOL)flag {
 	NSLog(@"[%@ audioRecorderDidFinishRecording:%@ successfully:%d]", [self class], aRecorder, flag);
