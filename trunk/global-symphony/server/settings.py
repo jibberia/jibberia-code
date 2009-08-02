@@ -33,22 +33,13 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
-
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
 
 MEDIA_URL = '/static'
-MEDIA_ROOT = '/Users/kevin/src/jibberia-code/global-symphony/server/uploads'
+MEDIA_ROOT = '/Users/jesse/Development/jibberia-code/global-symphony/server/uploads'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '^ljo=w^880)36h5g2*q=p#ff$*hq2-c$i(trr%wxyu8)l)8#ok'
