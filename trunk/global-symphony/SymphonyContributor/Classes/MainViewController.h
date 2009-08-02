@@ -24,6 +24,7 @@
 	UIButton *playBtn;
 	UISwitch *loopSwitch;
 	UIButton *uploadBtn;
+	UIActivityIndicatorView *progressDealie;
 	AudioRecorder *mAudioRecorder;
 	AudioPlayer *mAudioPlayer;
 	
@@ -45,5 +46,7 @@
 
 @property (nonatomic, retain) IBOutlet UIButton *uploadBtn;
 - (IBAction)upload;
+
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *progressDealie;
 
 @end
