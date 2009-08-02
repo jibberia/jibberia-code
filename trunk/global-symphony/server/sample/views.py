@@ -15,6 +15,8 @@ def add_sample(request):
             resp += "success"
             form.save()
             sample = form.instance
+            # testing
+            print sample.lat, sample.lon
             sample.transcode_to_mp3()
             sample.save()
         else:
@@ -30,10 +32,11 @@ def random_sample(request):
         for sample_id in exclude_ids:
             samples = samples.exclude(id=sample_id)
     
-    if request.GET.has_key('musical'):
+    if request.GET.has_key('musical') and request.GET['musical'] == 'true':
         samples = samples.filter(musical=True)
-        
-    samples = samples.exclude(lat=None).exclude(lon=None)
+    
+    if request.GET.has_key('with_location') and request.GET['with_location'] == 'true':
+        samples = samples.exclude(lat=None).exclude(lon=None)
 
     samples = samples.order_by('?')[:1]
     

@@ -3,32 +3,116 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>Audio Map</title>
+<script type="text/javascript" src="/site_media/js/soundmanager2.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="/static/js/soundmanager2.js"></script>
 <script type="text/javascript">
+
+soundManager.url = '/site_media/swf/'; // directory where SM2 .SWFs live
+soundManager.debugMode = false;
+soundManager.defaultOptions.usePeakData = true;
+soundManager.defaultOptions.useWaveformData = true;
+soundManager.defaultOptions.useEQData = true;
+soundManager.defaultOptions.allowPolling = true;
+soundManager.defaultOptions.useFastPolling = true;// fast timer=higher callback frequency, combine w/useHighPerformance
+soundManager.defaultOptions.useHighPerformance = true;// position:fixed flash movie for faster JS/flash callbacks
+
+
   var map;
+  var markers = [];
+  var poss;
   function initialize() {
-    var myLatlng = new google.maps.LatLng(0,0);
+    var myLatlng = new google.maps.LatLng(37.331689, -122.030731);
     var myOptions = {
-      zoom: 2,
+      zoom: 7,
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+    google.maps.event.addListener(map, 'click', function(pos) {
+        pos = pos.latLng;
+        plat = pos.lat() * 1;
+        plng = pos.lng() * 1;
+        for (i in markers) {
+            var marker = markers[i];
+            mlat = marker.position.lat() * 1;
+            mlng = marker.position.lng() * 1;
+            dlat = mlat - plat;
+            dlng = mlng - plng;
+            dist = Math.sqrt((dlat * dlat) + (dlng * dlng));
+            console.log(dist);
+            
+            if (dist < 1.0) {
+                soundManager.play(marker.soundId);
+            }
+        }
+    });
+    google.maps.event.addListener(map, 'rightclick', function(x) {
+        console.log('right click');
+        getSample();
+    })
+    
+    // initDistance();
+//    for (var i=0;i<5;i++)
+        getSample();
   }
   $('body').ready(initialize);
 
   var loadedSamples = Array();
+  
   function getSample() {
       var excludeString = loadedSamples.join(',');
-      $.getJSON("/samples/random?exclude=[" + excludeString + "]", function(data) {
-          if(data.error == undefined) {
-              var myLatlng = new google.maps.LatLng(data.lat, data.lon);
+      $.getJSON("/samples/random?exclude=[" + excludeString + "]&with_location=true", function(sample) {
+          if (sample.error == undefined) {
+              loadedSamples.push(sample.id);
+              var myLatlng = new google.maps.LatLng(sample.lat, sample.lon);
               var marker = new google.maps.Marker({
                   position: myLatlng, 
                   map: map,
-                  title:data.name
+                  title:"" + sample.name
               });
+              
+              soundManager.onready(function(oStatus) {
+                  if (oStatus.success) {
+                      var id = "sample-" + sample.id;
+                      marker.soundId = id;
+                      var mySound = soundManager.createSound({
+                          id: id,
+                          url: sample.url,
+                          onfinish: function() {
+                              if(this.loop) 
+                                  this.play();
+                          },
+                      });
+                  }
+                  
+              });
+              google.maps.event.addListener(marker, 'click', function() {
+                  soundManager.togglePause(this.soundId);
+              });
+              markers.push(marker);
+              
+              
+
+                          // var html = '<div id="' + id + '" class="player_wrapper"><input type="checkbox" id="checkbox_' + 
+                          // id + '"/><div class="progress"></div><div class="player"><p>' + data.name + 
+                          // '</p></div></div>';
+                          // $('.samples').append(html);
+                          // var checkboxSel = $('#checkbox_' + id);
+                          // checkboxSel.bind('click', function(){
+                          //     if(checkboxSel.attr('checked') == true) {
+                          //         mySound.loop = true;
+                          //     } else {
+                          //         mySound.loop = false;
+                          //     }
+                          // })
+                          
+                          // $('#' + id).bind('click', function() {
+                          //     console.log('toggle sound: ' + id);
+                          //     soundManager.togglePause(id);
+                          // });
           }
       });
   }
