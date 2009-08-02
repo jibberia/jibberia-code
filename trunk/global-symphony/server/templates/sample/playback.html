@@ -24,7 +24,7 @@ $(function(){
     $('#add_sample_button').bind('click', function() {
         var excludeString = loadedSamples.join(',');
     
-        $.getJSON("/samples/random?exclude=[" + excludeString + "]", function(data) {
+        $.getJSON("/samples/random?exclude=[" + excludeString + "]&musical=true", function(data) {
             soundManager.onready(function(oStatus) {
                 if (oStatus.success) {
                     if(data.error == undefined) {
