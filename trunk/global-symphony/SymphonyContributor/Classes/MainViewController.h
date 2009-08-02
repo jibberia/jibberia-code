@@ -8,11 +8,12 @@
 
 #import "FlipsideViewController.h"
 #import "ASIFormDataRequest.h"
+#import <CoreLocation/CoreLocation.h>
 
 @class AudioRecorder;
 @class AudioPlayer;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <CLLocationManagerDelegate, FlipsideViewControllerDelegate> {
 	BOOL recording;
 	BOOL shouldLoop;
 
@@ -25,6 +26,9 @@
 	UIButton *uploadBtn;
 	AudioRecorder *mAudioRecorder;
 	AudioPlayer *mAudioPlayer;
+	
+	CLLocationManager *locationManager;
+	CLLocation *location;
 }
 
 - (IBAction)showInfo;
@@ -38,7 +42,6 @@
 - (IBAction)play;//:(UIButton *)button;
 
 @property (nonatomic, retain) IBOutlet UISwitch *loopSwitch;
-- (IBAction)test:(id)sender;
 
 @property (nonatomic, retain) IBOutlet UIButton *uploadBtn;
 - (IBAction)upload;
