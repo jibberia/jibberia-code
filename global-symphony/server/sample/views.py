@@ -1,5 +1,9 @@
 from django.http import HttpResponse
 from sample.forms import SampleForm
+from sample.models import *
+from django.core import serializers
+from django.utils import simplejson
+from django.conf import settings
 
 def add_sample(request):
     if request.method == 'GET':
@@ -15,3 +19,30 @@ def add_sample(request):
             resp += str(repr(form.errors))
         resp += '<pre>' + repr(form).replace('<', '&lt;').replace('>', '&gt;') + '\n\n\n' + str(dir(form));
         return HttpResponse(resp)
+
+def random_sample(request):
+    samples = Sample.objects.all()
+    
+    if request.GET.has_key('exclude'):
+        exclude_ids = simplejson.loads(request.GET['exclude'])
+        for sample_id in exclude_ids:
+            samples = samples.exclude(id=sample_id)
+    
+    if request.GET.has_key('musical'):
+        samples = samples.filter(musical=True)
+
+    samples = samples.order_by('?')[:1]
+    
+    if samples.count() == 0:
+        sample_ret_obj = {
+            "error": "No more samples"
+        }
+    else:
+        sample = samples[0]
+        sample_ret_obj = {
+            "id": sample.id,
+            "name": sample.name,
+            "url": settings.MEDIA_URL + sample.file.url
+        }
+    
+    return HttpResponse(simplejson.dumps(sample_ret_obj))
