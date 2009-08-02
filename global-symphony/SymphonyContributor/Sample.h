@@ -8,7 +8,7 @@
 
 #import <CoreAudio/CoreAudioTypes.h>
 #import <AVFoundation/AVFoundation.h>
-
+ 
 
 @interface Sample : NSObject {
 	BOOL recording;
