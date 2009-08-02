@@ -22,10 +22,11 @@
     font-size:      2.5em;
     height:         100%;
     opacity:        1;
-    width:          97%;
+    width:          96%;
     line-height:    2.5em;
-    padding-left:   3%;
+    padding-left:   4%;
     text-transform: uppercase;
+	text-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 5px;
 }
 
 .player p {
