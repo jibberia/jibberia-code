@@ -16,7 +16,6 @@
 	BOOL recording;
 	NSString *errorString;
 	NSURL *mRecordURL;
-
 	CLLocationManager *locationManager;
 	CLLocation *location;
 	

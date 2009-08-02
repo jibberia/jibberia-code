@@ -25,6 +25,12 @@
         // Custom initialization
 		mAudioRecorder = [[AudioRecorder alloc] init];
 		mAudioPlayer = [[AudioPlayer alloc] init];
+		[mAudioPlayer addObserver:mAudioPlayer
+				  forKeyPath:@"looping"
+					 options:(NSKeyValueObservingOptionNew |
+							  NSKeyValueObservingOptionOld)
+					 context:NULL];
+		
     }
     return self;
 }
@@ -103,13 +109,15 @@
 }
 
 - (void)stop {
-
-	int result = [mAudioRecorder recordStop];
-	if (result == kRecorderNoError)
+	if (mAudioRecorder.recording)
 	{
-		NSLog(@"apparently got data successfully");
-		playBtn.enabled = YES;
-		uploadBtn.enabled = YES;
+		int result = [mAudioRecorder recordStop];
+		if (result == kRecorderNoError)
+		{
+			NSLog(@"apparently got data successfully");
+			playBtn.enabled = YES;
+			uploadBtn.enabled = YES;
+		}
 	}
 }
 
@@ -145,7 +153,7 @@
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
-	
+	[self stop];
 	[controller release];
 }
 
@@ -173,8 +181,10 @@
 
 
 - (void)dealloc {
+	[mAudioRecorder release];
+	[mAudioPlayer release];
+
     [super dealloc];
 }
-
 
 @end
