@@ -25,12 +25,7 @@
         // Custom initialization
 		mAudioRecorder = [[AudioRecorder alloc] init];
 		mAudioPlayer = [[AudioPlayer alloc] init];
-		[mAudioPlayer addObserver:mAudioPlayer
-				  forKeyPath:@"looping"
-					 options:(NSKeyValueObservingOptionNew |
-							  NSKeyValueObservingOptionOld)
-					 context:NULL];
-		
+		mAudioRecorder.musical = NO;
     }
     return self;
 }

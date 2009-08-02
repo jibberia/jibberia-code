@@ -32,6 +32,7 @@ const int kMaxPunchOutTimeRand = 15; // seconds
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];    
 	
 	mAudioRecorder = [[AudioRecorder alloc] init];
+	mAudioRecorder.musical = NO;
 	
 }
 

@@ -21,6 +21,8 @@
 	
 	ASIFormDataRequest *request;
 	UIActivityIndicatorView *progressDealie;
+	
+	BOOL musical;
 }
 
 typedef enum 
@@ -45,5 +47,6 @@ typedef enum
 
 @property (nonatomic, retain) NSString *errorString;
 @property BOOL recording;
+@property BOOL musical;
 
 @end
