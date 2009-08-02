@@ -2,8 +2,9 @@
 
 _This page is living here ([http://jibberia.com my] personal catch-all home for random code) until we come up with a good name for this project; then it will get its own google code project. And I think we're going GPL, though I chose BSD for this project. Whatever._
 
-= Global Symphony =
-_(temporary bad name)_
+= ARIA: Recombinant International Audio =
+
+ARIA: Recombinant International Audio lets anybody with an iPhone contribute audio field recordings or musical samples to an open, anonymous database. The samples are tagged and geotagged, and any listener with a web browser can tour audio maps or make layered compositions from musical loops. Bonus: GPL code, Creative Commons audio!
 
 *Concisely:* Since people all over the world have fancy phones, let's make it easy for people to take samples of audio wherever they like and contribute to an unending, unique global symphony.
 
