@@ -17,9 +17,9 @@ soundManager.defaultOptions.useFastPolling = true;// fast timer=higher callback 
 soundManager.defaultOptions.useHighPerformance = true;// position:fixed flash movie for faster JS/flash callbacks
 
 var loadedSamples = Array();
+var pastelArray = Array('#910100','#F0813D', '#FFF8DC', '#89E34E', '#41E3FC', '#E8DB47', '#4AFF59', '#7F3CFF', '#E85997', '#41FFD8');
 $(function(){
-    
-    
+    var startingIndex = Math.floor(Math.random()*(pastelArray.length));
     
     $('#add_sample_button').bind('click', function() {
         var excludeString = loadedSamples.join(',');
@@ -36,27 +36,39 @@ $(function(){
                             onfinish: function() {
                                 if(this.loop) 
                                     this.play();
+                                $('#' + id + ' .progress').css("width", "0%");
                             },
                             whileplaying:function() {
                                 var progress = (this.position / this.durationEstimate) * 100;
                                 $('#' + id + ' .progress').css("width", progress + '%');
                             }
                         });
-
-                        var html = '<div id="' + id + '" class="player_wrapper"><input type="checkbox" id="checkbox_' + 
-                        id + '"/><div class="progress"></div><div class="player"><p>' + data.name + 
-                        '</p></div></div>';
+                        
+                        mySound.loop = false;
+                        
+                        var backgroundColor = pastelArray[startingIndex];
+                        startingIndex = (startingIndex + 1) % pastelArray.length;
+                        var progressColor = pastelArray[startingIndex];
+                        startingIndex = (startingIndex + 1) % pastelArray.length;
+                        mySound.backgroundColor = backgroundColor;
+                        var html = '<div class="loop_toggle" style="background-color:' + progressColor 
+                            + '" id="loop_' + id + '"><input type="checkbox" id="checkbox_' + 
+                            id + '"/></div><div id="' + id + '" class="player_wrapper">' +
+                            '<div class="progress" style="background-color:' + progressColor + 
+                            '"></div><div class="player" style="background-color:' + backgroundColor + '"><p>' + data.name + 
+                            '</p></div></div>';
                         $('.samples').append(html);
                         var checkboxSel = $('#checkbox_' + id);
-                        checkboxSel.bind('click', function(){
-                            if(checkboxSel.attr('checked') == true) {
-                                mySound.loop = true;
-                            } else {
+                        $('#loop_' + id).bind('click', function(){
+                            if(mySound.loop) {
                                 mySound.loop = false;
+                                $(this).css('background-color', progressColor);
+                            } else {
+                                mySound.loop = true;
+                                $(this).css('background-color', '' + mySound.backgroundColor);
                             }
                         })
                         $('#' + id).bind('click', function() {
-                            console.log('toggle sound: ' + id);
                             soundManager.togglePause(id);
                         });
                     }
@@ -71,8 +83,7 @@ $(function(){
 {% endblock %}
 
 {% block content %}
-
-<input id="add_sample_button" type="image" src="/site_media/images/add_sample.png"/>
+<img id="add_sample_button" src="/site_media/images/add_sample.png" />
 
 <div class="samples">
 
