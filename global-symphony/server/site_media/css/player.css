@@ -1,9 +1,25 @@
+.player_wrapper {
+    background:     #6AB39F;    
+    height:         75px;
+}
+
 .player {
-    width:          500px;
-    margin:         20px 0px 20px 50px;
-    background:     #000;
+    margin:         0;
     color:          #FFF;
     font-size:      1em;
-    line-height:    1em;
-    padding:        10px;
+    padding:        5px 0px 5px 0px;
+    height:         65px;
+    margin-top:     -75px;
+}
+
+.player p {
+    margin-bottom:  5px;
+    padding:        0px;
+}
+
+.progress {
+    width:          0%;
+    height:         75px;
+    background:     #349809;
+    opacity:        .5;
 }
