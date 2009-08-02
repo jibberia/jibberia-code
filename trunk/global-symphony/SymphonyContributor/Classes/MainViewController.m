@@ -57,18 +57,14 @@
 	location = [newLocation copy];
 }
 
-// http://stackoverflow.com/questions/936855/file-upload-to-http-server-in-iphone-programming
 - (IBAction)upload {
-	NSLog(@"upload");
-
-	//request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]];
-	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/samples/add"]];
+	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]]; // jibberia.dyndns.org
 	[request setFile:[mAudioRecorder filePathStr] forKey:@"file"];
 	[request setPostValue:@"TODO" forKey:@"name"];
 	if (location != nil) {
 	
-		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"latitude"];
-		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"longitude"];
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"lon"];
 	}
 	[request start];
 }
