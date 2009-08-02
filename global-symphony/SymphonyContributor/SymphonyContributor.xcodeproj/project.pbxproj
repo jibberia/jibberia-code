@@ -30,6 +30,7 @@
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		3A451DEF1025329D00E0FC0A /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A451DEC1025329D00E0FC0A /* AudioPlayer.m */; };
 		3A451DF01025329D00E0FC0A /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A451DEE1025329D00E0FC0A /* AudioRecorder.m */; };
+		884AF92210256B9C00C5876C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884AF92110256B9C00C5876C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		3A451DEC1025329D00E0FC0A /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = Classes/AudioPlayer.m; sourceTree = "<group>"; };
 		3A451DED1025329D00E0FC0A /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorder.h; path = Classes/AudioRecorder.h; sourceTree = "<group>"; };
 		3A451DEE1025329D00E0FC0A /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorder.m; path = Classes/AudioRecorder.m; sourceTree = "<group>"; };
+		884AF92110256B9C00C5876C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* SymphonyContributor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SymphonyContributor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				0A8DACD9100BEC27007E399F /* CoreAudio.framework in Frameworks */,
 				0A0533B210254EAA00BE39D8 /* CFNetwork.framework in Frameworks */,
 				0A0533B310254EAA00BE39D8 /* libz.1.2.3.dylib in Frameworks */,
+				884AF92210256B9C00C5876C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +198,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				884AF92110256B9C00C5876C /* CoreLocation.framework */,
 				0A0533B010254EAA00BE39D8 /* CFNetwork.framework */,
 				0A0533B110254EAA00BE39D8 /* libz.1.2.3.dylib */,
 				0A8DACD8100BEC27007E399F /* CoreAudio.framework */,

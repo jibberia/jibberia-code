@@ -17,6 +17,8 @@
 @synthesize loopSwitch;
 @synthesize uploadBtn;
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
@@ -31,19 +33,43 @@
 	if (mAudioRecorder.recording) {
 		[self stop];
 		[button setTitle:@"Record" forState:UIControlStateNormal];
+		
+		if (locationManager == nil) {
+			locationManager = [[CLLocationManager alloc] init];
+			locationManager.delegate = self;
+		}
+		
+		// skip location services if the user has disabled Location Services in General Settings
+		// this is so we don't pop up nag messages to turn it on
+		if (locationManager.locationServicesEnabled) {
+			[locationManager startUpdatingLocation];
+		}
+		
 	} else {
+		location = nil;
 		[self record];
 		[button setTitle:@"Stop" forState:UIControlStateNormal];
 	}
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+	[manager stopUpdatingLocation];
+	location = newLocation;
 }
 
 // http://stackoverflow.com/questions/936855/file-upload-to-http-server-in-iphone-programming
 - (IBAction)upload {
 	NSLog(@"upload");
 
-	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]];
+	//request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]];
+	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/samples/add"]];
 	[request setFile:[mAudioRecorder filePathStr] forKey:@"file"];
 	[request setPostValue:@"TODO" forKey:@"name"];
+	if (location != nil && location.coordinate != nil) {
+	
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"latitude"];
+		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"longitude"];
+	}
 	[request start];
 }
 
