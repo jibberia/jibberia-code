@@ -113,6 +113,10 @@
 			NSLog(@"apparently got data successfully");
 			playBtn.enabled = YES;
 			uploadBtn.enabled = YES;
+			NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+			[dateFormat setDateFormat: @"yyyy-MM-dd HH:mm:ss zzz"]; // 2009-02-01 19:50:41 PST
+			NSString *dateString = [dateFormat stringFromDate: [NSDate date]];
+			[nameField setText:dateString];
 		}
 	}
 }
