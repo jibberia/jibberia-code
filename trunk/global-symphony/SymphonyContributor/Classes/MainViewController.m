@@ -37,9 +37,11 @@
 	if (mAudioRecorder.recording) {
 		[self stop];
 		[button setTitle:@"Record" forState:UIControlStateNormal];
+		playBtn.enabled = YES;
 		[mAudioRecorder startUpdatingLocation];
 	} else {
 		[self record];
+		playBtn.enabled = NO;
 		[button setTitle:@"Stop" forState:UIControlStateNormal];
 		[mAudioRecorder invalidateLocation];
 	}

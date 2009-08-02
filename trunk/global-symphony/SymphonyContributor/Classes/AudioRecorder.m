@@ -144,7 +144,7 @@
 }
 
 - (void)upload {
-	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/samples/add"]];
+	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8198/samples/add"]];
 	[request setFile:[self filePathStr] forKey:@"file"];
 	[request setPostValue:self.name forKey:@"name"];
 	if (musical) [request setPostValue:@"true"  forKey:@"musical"];
