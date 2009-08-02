@@ -13,13 +13,11 @@
 @class AudioRecorder;
 @class AudioPlayer;
 
-@interface MainViewController : UIViewController <CLLocationManagerDelegate, FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	BOOL recording;
 	BOOL shouldLoop;
 
 	NSURL *mRecordURL;
-//	NSString *recorderFilePath;
-	ASIFormDataRequest *request;
 	
 	UIButton *playBtn;
 	UISwitch *loopSwitch;
@@ -27,9 +25,6 @@
 	UIActivityIndicatorView *progressDealie;
 	AudioRecorder *mAudioRecorder;
 	AudioPlayer *mAudioPlayer;
-	
-	CLLocationManager *locationManager;
-	CLLocation *location;
 }
 
 - (IBAction)showInfo;

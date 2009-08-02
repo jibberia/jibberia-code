@@ -34,43 +34,17 @@
 	if (mAudioRecorder.recording) {
 		[self stop];
 		[button setTitle:@"Record" forState:UIControlStateNormal];
-		
-		if (locationManager == nil) {
-			locationManager = [[CLLocationManager alloc] init];
-			locationManager.delegate = self;
-		}
-		
-		// skip location services if the user has disabled Location Services in General Settings
-		// this is so we don't pop up nag messages to turn it on
-		if (locationManager.locationServicesEnabled) {
-			[locationManager startUpdatingLocation];
-			[progressDealie startAnimating];
-		}
-		
+		[mAudioRecorder startUpdatingLocation];
 	} else {
-		location = nil;
 		[self record];
 		[button setTitle:@"Stop" forState:UIControlStateNormal];
+		[mAudioRecorder invalidateLocation];
 	}
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-	[manager stopUpdatingLocation];
-	location = [newLocation copy];
-	[progressDealie stopAnimating];
 }
 
 - (IBAction)upload {
 	[progressDealie startAnimating];
-	request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://jibberia.dyndns.org:8000/samples/add"]]; // jibberia.dyndns.org
-	[request setFile:[mAudioRecorder filePathStr] forKey:@"file"];
-	[request setPostValue:@"TODO" forKey:@"name"];
-	if (location != nil) {
-	
-		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.latitude] forKey:@"lat"];
-		[request setPostValue:[NSString stringWithFormat:@"%f", location.coordinate.longitude] forKey:@"lon"];
-	}
-	[request start];
+	[mAudioRecorder upload];
 	[progressDealie stopAnimating];
 }
 
