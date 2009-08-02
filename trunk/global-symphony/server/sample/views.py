@@ -34,6 +34,8 @@ def random_sample(request):
     
     if request.GET.has_key('musical') and request.GET['musical'] == 'true':
         samples = samples.filter(musical=True)
+    else:
+        samples = samples.filter(musical=False)
     
     if request.GET.has_key('with_location') and request.GET['with_location'] == 'true':
         samples = samples.exclude(lat=None).exclude(lon=None)
