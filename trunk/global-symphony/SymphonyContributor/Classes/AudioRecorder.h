@@ -45,6 +45,7 @@ typedef enum
 - (void)upload;
 - (void)startUpdatingLocation;
 - (void)invalidateLocation;
+- (BOOL)deleteRecording;
 
 @property (nonatomic, retain) NSString *errorString;
 @property BOOL recording;

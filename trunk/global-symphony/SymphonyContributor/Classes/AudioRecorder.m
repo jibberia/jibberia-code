@@ -35,6 +35,11 @@
 	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 	NSError *err = nil;
 	
+	// delete last recording
+	if (mRecordURL != nil) { // we have a file
+		[self deleteRecording];
+	}
+	
 	// enter record mode
 	[audioSession setCategory:AVAudioSessionCategoryRecord error:&err];
 	
@@ -104,6 +109,19 @@
 		return kRecorderAudioDataError;
 	}
 	return kRecorderNoError;
+}
+
+- (BOOL)deleteRecording
+{
+	NSString *path = [self filePathStr];
+	NSLog(@"attempting to delete %@", path);
+	NSError *err = nil;
+	[[NSFileManager defaultManager] removeItemAtPath:path error:&err];
+	if (err) {
+		NSLog(@"Error deleting %@: %@", path, [err localizedDescription]);
+		return NO;
+	}
+	return YES;
 }
 
 - (NSString *)filePathStr {
