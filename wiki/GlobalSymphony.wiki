@@ -73,6 +73,10 @@ REST api thoughts:
  * GET /sample
    * /sample/random
 
+==== Audio Transcoding ====
+
+Only compressed format phone can natively do is Apple Lossless, aka ALAC; only format Flash plays is MP3. To do this on linux, we have to convert the ALAC file (which comes in a .m4a container) to wav with this tool: http://craz.net/programs/itunes/alac.html Then we can use lame to make an mp3.
+
 ----
 
 == Web Symphony Client ==
