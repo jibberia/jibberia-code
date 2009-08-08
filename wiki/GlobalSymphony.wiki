@@ -86,4 +86,4 @@ Only compressed format phone can natively do is Apple Lossless, aka ALAC; only f
 Almost no UI: loop X samples using [http://www.schillmania.com/projects/soundmanager2 soundmanager2] and javascript.
 
 === ideas ===
- * ...
+ * collaborative editing. say we have a number of playback modules, and the user can do some sort of composing. let people save phrases, motifs, sections, etc. and share them. think fractals.
