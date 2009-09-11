@@ -5,23 +5,35 @@
 @synthesize saveOptionRadioGroup;
 @synthesize pathField;
 @synthesize statusMsg;
+@synthesize log;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	validMoviePaths = nil;
-//	[self log:@"dogs hate %@", @"cats"];//, nil];
+//	[self log:@"1 dogs hate %@", @"cats"];
+//	[self log:@"2 meow bark"];
 }
 
 - (void)log:(NSString *)formatString, ... {
-	NSString *msg;
+	NSMutableString *msg;
 	
     va_list args;
     va_start(args, formatString);
-    msg = [[NSString alloc] initWithFormat:formatString arguments:args];
+    msg = [[NSMutableString alloc] initWithFormat:formatString arguments:args];
     va_end(args);
 	
-	NSLog(msg);
+	[msg appendString:@"\n"];
+	
+//	NSLog(msg);
+
+	[log insertText:msg];
 	[msg release];
+}
+
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)path {
+	[pathField setStringValue:path];
+	[self populateValidMoviePaths];
+	return YES;
 }
 
 - (IBAction)pathFieldChanged:(id)sender {
@@ -30,7 +42,6 @@
 
 - (void)validateAndAddMoviePath:(NSString *)path {
 	if ([[path pathExtension] isEqualToString:@"mov"]) {
-		NSLog(@"Adding '%@'", path);
 		[validMoviePaths addObject:path];
 	}
 }
@@ -45,12 +56,15 @@
 	NSString *path = [pathField stringValue];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
-	if ( ![fileManager fileExistsAtPath:path]) {
+	BOOL exists, isDirectory;
+	
+	exists = [fileManager fileExistsAtPath:path isDirectory:&isDirectory];
+	if (!exists) {
 		[statusMsg setStringValue:@"Invalid path"];
 		return;
 	}
 	
-	if ([fileManager fileExistsAtPath:path isDirectory:nil]) {
+	if (isDirectory) {
 		NSError *err = nil;
 		NSArray *files = [fileManager contentsOfDirectoryAtPath:path error:&err];
 
@@ -60,18 +74,21 @@
 	} else {
 		[self validateAndAddMoviePath:path];
 	}
+	
 	[statusMsg setStringValue:[NSString stringWithFormat:@"Found %d movies", [validMoviePaths count]]];
+	
+	[self log:@"We will attempt to assign channels on these %d files:", [validMoviePaths count]];
+	for (NSString *moviePath in validMoviePaths) {
+		[self log:[moviePath lastPathComponent]];
+	}
 }
 
 - (IBAction)browse:(id)sender {
-	NSLog(@"[%@ browse:%@]", [self class], sender);
-	
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setCanChooseDirectories:YES];
 	
 	if (NSOKButton == [openPanel runModalForDirectory:nil file:nil]) {
-		NSLog(@"ok button: %@", [openPanel filename]);
 		[pathField setStringValue:[openPanel filename]];
 		[self populateValidMoviePaths];
 	}
@@ -83,8 +100,7 @@
 }
 
 - (IBAction)go:(id)sender {
-	NSString *path = [pathField stringValue];
-	NSLog(@"pathField value: %@", path);
+	[self log:@""];
 	
 	if (validMoviePaths == nil) {
 		[self populateValidMoviePaths];
@@ -94,19 +110,15 @@
 	}
 	
 	for (NSString *moviePath in validMoviePaths) {
-		NSLog(@"Assigning channels for %@", moviePath);
 		[self assignChannelsToFileAtPath:moviePath];
 	}
 }
 
 - (void)assignChannelsToFileAtPath:(NSString *)path {
+	[self log:@"Assigning channels for '%@'...", [path lastPathComponent]];
+	
 	int idx = 0;
-	NSError *err;
-	QTMovie *movie = [QTMovie movieWithFile:path error:&err];
-	if (0 && err) { // TODO WTF
-		NSLog(@"we got an error.");
-		NSLog(@"error: %@", [err localizedDescription]);
-	}
+	QTMovie *movie = [QTMovie movieWithFile:path error:nil];
 	
 	AudioChannelLabel lbls[8] = {
 		kAudioChannelLabel_Left,
@@ -126,28 +138,27 @@
 		}
 	}
 	if (idx != 8) {
-		return [self bailWithMessage:[NSString stringWithFormat:@"'%@' does not have 8 audio tracks; skipping it", [path lastPathComponent]]];
+		[self log:@"** Error: '%@' does not have 8 audio tracks; skipping it", [path lastPathComponent]];
+		return;
 	}
 	
 	idx = 0;
 	for (QTTrack *track in [movie tracks]) {
 		if ([[track attributeForKey:@"QTTrackMediaTypeAttribute"] isEqualToString:@"soun"]) {
-//			NSLog(@"... so set type");
 			setAudioTrackChannelLayoutDiscrete([track quickTimeTrack], lbls[idx]);
 			idx++;
 		}
 	}
 	
 	if ([saveOptionRadioGroup selectedRow] == 0) { // update existing files
-		NSLog(@"Saving over existing file...");
+		//NSLog(@"Saving over existing file...");
 		[movie updateMovieFile];
+		[self log:@"    ...saved '%@'.", [path lastPathComponent]];
 	} else {
 		NSString *newPath = [path stringByReplacingOccurrencesOfString:@"." withString: @"-assigned."];
-		NSLog(@"Writing updated file to %@...", newPath);
-	
 		[movie writeToFile:newPath withAttributes:nil];
+		[self log:@"    ...created '%@'.", [newPath lastPathComponent]];
 	}
-	NSLog(@"...done.");
 }
 
 

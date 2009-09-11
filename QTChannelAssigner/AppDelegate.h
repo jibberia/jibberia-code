@@ -8,12 +8,15 @@
 	NSMatrix *saveOptionRadioGroup;
 	NSTextField *pathField;
 	NSTextField *statusMsg;
+	
+	NSTextView *log;
 }
 
 
 @property (nonatomic, retain) IBOutlet NSMatrix *saveOptionRadioGroup;
 @property (nonatomic, retain) IBOutlet NSTextField *pathField;
 @property (nonatomic, retain) IBOutlet NSTextField *statusMsg;
+@property (nonatomic, retain) IBOutlet NSTextView *log;
 
 - (IBAction)go:(id)sender;
 - (IBAction)pathFieldChanged:(id)sender;

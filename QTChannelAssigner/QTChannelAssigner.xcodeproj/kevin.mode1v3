@@ -280,7 +280,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>0</integer>
+									<integer>12</integer>
+									<integer>11</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -305,7 +306,7 @@
 							<real>22</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>149 46 1198 832 0 0 1440 878 </string>
+						<string>148 46 1198 832 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -335,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0ACF35851059E8B00002628F</string>
+										<string>0ACF35DA1059FA9B0002628F</string>
 										<key>history</key>
 										<array>
 											<string>0AF3EE861045FFF4003B26A0</string>
@@ -345,8 +346,8 @@
 											<string>0A98660F1054579F0026DBA9</string>
 											<string>0A6F88581059520F00AF1F90</string>
 											<string>0ACF35501059E3DC0002628F</string>
-											<string>0ACF35521059E3DC0002628F</string>
-											<string>0ACF35531059E3DC0002628F</string>
+											<string>0ACF35931059EC6D0002628F</string>
+											<string>0ACF35941059EC6D0002628F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -372,6 +373,10 @@
 											<string>0ACF35541059E3DC0002628F</string>
 											<string>0ACF35551059E3DC0002628F</string>
 											<string>0ACF35561059E3DC0002628F</string>
+											<string>0ACF35891059E9D60002628F</string>
+											<string>0ACF358A1059E9D60002628F</string>
+											<string>0ACF35951059EC6D0002628F</string>
+											<string>0ACF35961059EC6D0002628F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -385,7 +390,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {939, 719}}</string>
 								<key>RubberWindowFrame</key>
-								<string>149 46 1198 832 0 0 1440 878 </string>
+								<string>148 46 1198 832 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -405,7 +410,7 @@
 								<key>Frame</key>
 								<string>{{0, 724}, {939, 67}}</string>
 								<key>RubberWindowFrame</key>
-								<string>149 46 1198 832 0 0 1440 878 </string>
+								<string>148 46 1198 832 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -573,7 +578,7 @@
 		<string>/Users/kevin/src/jibberia-code/QTChannelAssigner/QTChannelAssigner.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>149 46 1198 832 0 0 1440 878 </string>
+	<string>148 46 1198 832 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
