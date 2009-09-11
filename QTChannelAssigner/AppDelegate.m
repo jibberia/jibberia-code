@@ -9,6 +9,19 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	validMoviePaths = nil;
+//	[self log:@"dogs hate %@", @"cats"];//, nil];
+}
+
+- (void)log:(NSString *)formatString, ... {
+	NSString *msg;
+	
+    va_list args;
+    va_start(args, formatString);
+    msg = [[NSString alloc] initWithFormat:formatString arguments:args];
+    va_end(args);
+	
+	NSLog(msg);
+	[msg release];
 }
 
 - (IBAction)pathFieldChanged:(id)sender {
