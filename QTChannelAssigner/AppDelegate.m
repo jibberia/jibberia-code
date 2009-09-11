@@ -12,6 +12,17 @@
 }
 
 - (IBAction)pathFieldChanged:(id)sender {
+	[self populateValidMoviePaths];
+}
+
+- (void)validateAndAddMoviePath:(NSString *)path {
+	if ([[path pathExtension] isEqualToString:@"mov"]) {
+		NSLog(@"Adding '%@'", path);
+		[validMoviePaths addObject:path];
+	}
+}
+
+- (void)populateValidMoviePaths {
 	if (validMoviePaths != nil) {
 		NSLog(@"validMoviePaths was not nil; release it and create a new one");
 		[validMoviePaths release], validMoviePaths = nil;
@@ -30,24 +41,26 @@
 		NSError *err = nil;
 		NSArray *files = [fileManager contentsOfDirectoryAtPath:path error:&err];
 
-//		NSLog(@"begin iterating %@", path);
 		for (NSString *fileName in files) {
-//			NSLog(@" ");
-//			NSLog(@"fileName='%@'", fileName);
-//			NSLog(@"[path stringByAppendingPathComponent:fileName]='%@'", [path stringByAppendingPathComponent:fileName]);
-//			NSLog(@"[fileName lastPathComponent]='%@'", [fileName lastPathComponent]);
-//			NSLog(@"[fileName pathExtension]='%@'", [fileName pathExtension]);
-			
-			if ([[fileName pathExtension] isEqualToString:@"mov"]) {
-				NSString *fullPath = [path stringByAppendingPathComponent:fileName];
-				NSLog(@"Adding '%@'", fullPath);
-				[validMoviePaths addObject:fullPath];
-			}
+			[self validateAndAddMoviePath:[path stringByAppendingPathComponent:fileName]];
 		}
-		
-		[statusMsg setStringValue:[NSString stringWithFormat:@"Found %d movies", [validMoviePaths count]]];
 	} else {
-		[statusMsg setStringValue:@"Aww, just one?"];
+		[self validateAndAddMoviePath:path];
+	}
+	[statusMsg setStringValue:[NSString stringWithFormat:@"Found %d movies", [validMoviePaths count]]];
+}
+
+- (IBAction)browse:(id)sender {
+	NSLog(@"[%@ browse:%@]", [self class], sender);
+	
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	[openPanel setCanChooseFiles:YES];
+	[openPanel setCanChooseDirectories:YES];
+	
+	if (NSOKButton == [openPanel runModalForDirectory:nil file:nil]) {
+		NSLog(@"ok button: %@", [openPanel filename]);
+		[pathField setStringValue:[openPanel filename]];
+		[self populateValidMoviePaths];
 	}
 }
 
@@ -61,7 +74,10 @@
 	NSLog(@"pathField value: %@", path);
 	
 	if (validMoviePaths == nil) {
-		return [self bailWithMessage:@"No movies found!"];
+		[self populateValidMoviePaths];
+		if (validMoviePaths == nil) {
+			return [self bailWithMessage:@"No movies found!"];
+		}
 	}
 	
 	for (NSString *moviePath in validMoviePaths) {
@@ -90,25 +106,18 @@
 		kAudioChannelLabel_RightTotal
 	};
 	
-	// safety check
+	// safety check - 8 audio tracks
 	for (QTTrack *track in [movie tracks]) {
 		if ([[track attributeForKey:@"QTTrackMediaTypeAttribute"] isEqualToString:@"soun"]) {
 			idx++;
 		}
 	}
-	
 	if (idx != 8) {
 		return [self bailWithMessage:[NSString stringWithFormat:@"'%@' does not have 8 audio tracks; skipping it", [path lastPathComponent]]];
 	}
-		
 	
 	idx = 0;
-	
 	for (QTTrack *track in [movie tracks]) {
-//		NSLog(@"got track of type '%@' named '%@'",
-//			  [track attributeForKey:@"QTTrackMediaTypeAttribute"],
-//			  [track attributeForKey:@"QTTrackDisplayNameAttribute"]
-//		);
 		if ([[track attributeForKey:@"QTTrackMediaTypeAttribute"] isEqualToString:@"soun"]) {
 //			NSLog(@"... so set type");
 			setAudioTrackChannelLayoutDiscrete([track quickTimeTrack], lbls[idx]);
@@ -117,14 +126,15 @@
 	}
 	
 	if ([saveOptionRadioGroup selectedRow] == 0) { // update existing files
+		NSLog(@"Saving over existing file...");
 		[movie updateMovieFile];
 	} else {
 		NSString *newPath = [path stringByReplacingOccurrencesOfString:@"." withString: @"-assigned."];
-		NSLog(@"writing updated file to %@...", newPath);
+		NSLog(@"Writing updated file to %@...", newPath);
 	
 		[movie writeToFile:newPath withAttributes:nil];
 	}
-	NSLog(@"done.");
+	NSLog(@"...done.");
 }
 
 
