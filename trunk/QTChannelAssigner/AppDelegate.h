@@ -24,6 +24,8 @@
 - (void)populateValidMoviePaths;
 - (void)bailWithMessage:(NSString *)msg;
 
+- (void)log:(NSString *)s, ...;
+
 void setAudioTrackChannelLayoutDiscrete(Track inTrack, AudioChannelLabel lbl);
 OSStatus getTrackLayoutAndSize(Track track,  UInt32* outLayoutSize, AudioChannelLayout** outLayout);
 
