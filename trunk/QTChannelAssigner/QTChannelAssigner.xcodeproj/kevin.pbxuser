@@ -46,7 +46,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 33";
 		rLen = 0;
-		rLoc = 1957;
+		rLoc = 1778;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 24;
@@ -56,7 +56,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 33";
 		rLen = 0;
-		rLoc = 1957;
+		rLoc = 1778;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 24;
@@ -76,7 +76,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 25";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1491;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 24;
@@ -86,7 +86,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 25";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1491;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 0;
@@ -123,7 +123,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 19";
 		rLen = 0;
-		rLoc = 715;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 24;
@@ -133,7 +133,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 25";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1491;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 0;
@@ -153,7 +153,7 @@
 		comments = "error: syntax error before '*' token";
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		rLen = 1;
-		rLoc = 80;
+		rLoc = 74;
 		rType = 1;
 	};
 	0ACF34A91059C34C0002628F /* PBXTextBookmark */ = {
@@ -161,7 +161,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 25";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1491;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 24;
@@ -181,7 +181,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 2038;
+		rLoc = 1859;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 246;
@@ -199,7 +199,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 21";
 		rLen = 0;
-		rLoc = 774;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 24;
@@ -209,7 +209,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 34";
 		rLen = 0;
-		rLoc = 1014;
+		rLoc = 940;
 		rType = 0;
 		vrLen = 1316;
 		vrLoc = 246;
@@ -219,7 +219,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 36";
 		rLen = 0;
-		rLoc = 1014;
+		rLoc = 940;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 246;
@@ -229,7 +229,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 31";
 		rLen = 0;
-		rLoc = 1014;
+		rLoc = 940;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 246;
@@ -239,7 +239,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 34";
 		rLen = 0;
-		rLoc = 1561;
+		rLoc = 1487;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 246;
@@ -249,7 +249,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 1014;
+		rLoc = 940;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 246;
@@ -269,7 +269,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 9";
 		rLen = 0;
-		rLoc = 253;
+		rLoc = 208;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 0;
@@ -279,7 +279,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 9";
 		rLen = 0;
-		rLoc = 253;
+		rLoc = 208;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 0;
@@ -299,7 +299,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 47";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1594;
 		rType = 0;
 		vrLen = 1638;
 		vrLoc = 132;
@@ -309,7 +309,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 48";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1605;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 1308;
@@ -319,7 +319,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 48";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1605;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 1308;
@@ -339,7 +339,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 48";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1605;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 1308;
@@ -369,7 +369,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 48";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1605;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 1308;
@@ -399,7 +399,7 @@
 		comments = "warning: property 'saveOptionRadioGroup' requires method '-saveOptionRadioGroup' to be defined - use @synthesize, @dynamic or provide a method implementation";
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		rLen = 1;
-		rLoc = 339;
+		rLoc = 207;
 		rType = 1;
 	};
 	0ACF34DC1059CF0B0002628F /* PBXTextBookmark */ = {
@@ -407,7 +407,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 300";
 		rLen = 0;
-		rLoc = 12022;
+		rLoc = 7508;
 		rType = 0;
 		vrLen = 1470;
 		vrLoc = 9694;
@@ -427,7 +427,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2277;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1292;
 		vrLoc = 1308;
@@ -447,7 +447,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2277;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1292;
 		vrLoc = 1308;
@@ -467,7 +467,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 1012;
@@ -477,7 +477,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 66";
 		rLen = 0;
-		rLoc = 2481;
+		rLoc = 2302;
 		rType = 0;
 		vrLen = 1435;
 		vrLoc = 1012;
@@ -487,7 +487,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1420;
 		vrLoc = 1012;
@@ -497,7 +497,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 57";
 		rLen = 0;
-		rLoc = 2038;
+		rLoc = 1859;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1012;
@@ -507,7 +507,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 57";
 		rLen = 0;
-		rLoc = 2038;
+		rLoc = 1859;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1012;
@@ -557,7 +557,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 1012;
@@ -567,7 +567,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 1012;
@@ -577,7 +577,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 1012;
@@ -587,7 +587,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 2039;
+		rLoc = 1860;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 1012;
@@ -597,7 +597,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 97";
 		rLen = 0;
-		rLoc = 3643;
+		rLoc = 3464;
 		rType = 0;
 		vrLen = 1650;
 		vrLoc = 2129;
@@ -607,7 +607,7 @@
 		comments = "error: 'movie' undeclared (first use in this function)";
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		rLen = 1;
-		rLoc = 211;
+		rLoc = 204;
 		rType = 1;
 	};
 	0ACF35021059D3050002628F /* PBXTextBookmark */ = {
@@ -615,7 +615,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 189";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7508;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 6294;
@@ -635,7 +635,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 71";
 		rLen = 51;
-		rLoc = 2281;
+		rLoc = 2102;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 857;
@@ -645,7 +645,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 311";
 		rLen = 0;
-		rLoc = 12066;
+		rLoc = 7508;
 		rType = 0;
 		vrLen = 1816;
 		vrLoc = 9497;
@@ -665,7 +665,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 63";
 		rLen = 0;
-		rLoc = 2374;
+		rLoc = 2195;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 1559;
@@ -685,7 +685,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 71";
 		rLen = 51;
-		rLoc = 2281;
+		rLoc = 2102;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 857;
@@ -705,7 +705,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 71";
 		rLen = 51;
-		rLoc = 2281;
+		rLoc = 2102;
 		rType = 0;
 		vrLen = 1537;
 		vrLoc = 857;
@@ -715,7 +715,7 @@
 		comments = "error: nested functions are disabled, use -fnested-functions to re-enable";
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		rLen = 1;
-		rLoc = 140;
+		rLoc = 134;
 		rType = 1;
 	};
 	0ACF35121059D6440002628F /* PBXTextBookmark */ = {
@@ -723,7 +723,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 132";
 		rLen = 0;
-		rLoc = 3983;
+		rLoc = 3804;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 3162;
@@ -743,7 +743,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 54";
 		rLen = 39;
-		rLoc = 1734;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 1731;
@@ -753,7 +753,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 54";
 		rLen = 39;
-		rLoc = 1734;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 1731;
@@ -773,7 +773,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 101";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 2887;
 		rType = 0;
 		vrLen = 1430;
 		vrLoc = 2173;
@@ -783,7 +783,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 96";
 		rLen = 0;
-		rLoc = 2820;
+		rLoc = 2641;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 2123;
@@ -803,7 +803,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 2";
 		rLen = 0;
-		rLoc = 26;
+		rLoc = 23;
 		rType = 0;
 		vrLen = 1728;
 		vrLoc = 0;
@@ -813,7 +813,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 2";
 		rLen = 0;
-		rLoc = 26;
+		rLoc = 23;
 		rType = 0;
 		vrLen = 1728;
 		vrLoc = 0;
@@ -833,7 +833,7 @@
 		fRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */;
 		name = "AppDelegate.m: 10";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 208;
 		rType = 0;
 		vrLen = 1728;
 		vrLoc = 0;
@@ -887,9 +887,9 @@
 	};
 	0AF3EE741045FC61003B26A0 /* AppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1006, 4774}}";
-			sepNavSelRange = "{281, 0}";
-			sepNavVisRange = "{0, 1728}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 3136}}";
+			sepNavSelRange = "{3855, 0}";
+			sepNavVisRange = "{2974, 1453}";
 			sepNavWindowFrame = "{{-876, 18}, {839, 878}}";
 		};
 	};
@@ -921,20 +921,38 @@
 		sourceTree = "<absolute>";
 	};
 	0AF3EF8510461DD3003B26A0 /* QuickTimeAudioUtils.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = QuickTimeAudioUtils.h;
+		path = "/Users/kevin/src/jibberia-code/QTChannelAssigner/QuickTimeAudioUtils.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1188, 1344}}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 1344}}";
 			sepNavSelRange = "{1314, 0}";
-			sepNavVisRange = "{0, 2578}";
+			sepNavVisRange = "{0, 2677}";
 		};
 	};
 	0AF3EF8610461DD3003B26A0 /* QuickTimeAudioUtils.c */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.c;
+		name = QuickTimeAudioUtils.c;
+		path = "/Users/kevin/src/jibberia-code/QTChannelAssigner/QuickTimeAudioUtils.c";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1147, 10066}}";
-			sepNavSelRange = "{6757, 0}";
-			sepNavVisRange = "{5885, 1706}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 10220}}";
+			sepNavSelRange = "{6118, 0}";
+			sepNavVisRange = "{5971, 1332}";
 		};
 	};
 	0AF3EF8D10461EF0003B26A0 /* InfoObject.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = InfoObject.h;
+		path = "/Users/kevin/src/jibberia-code/QTChannelAssigner/InfoObject.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1147, 1120}}";
 			sepNavSelRange = "{0, 0}";
@@ -942,6 +960,12 @@
 		};
 	};
 	0AF3EF8E10461EF0003B26A0 /* InfoObject.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = InfoObject.m;
+		path = "/Users/kevin/src/jibberia-code/QTChannelAssigner/InfoObject.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1147, 1372}}";
 			sepNavSelRange = "{0, 0}";
@@ -1117,7 +1141,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					929,
+					660,
 					60,
 					20,
 					48,
