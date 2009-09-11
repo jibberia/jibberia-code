@@ -10,8 +10,6 @@
 		0AF3EE3D1045FB2B003B26A0 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3EE3C1045FB2B003B26A0 /* QTKit.framework */; };
 		0AF3EE471045FB36003B26A0 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3EE461045FB36003B26A0 /* QuickTime.framework */; };
 		0AF3EE751045FC61003B26A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3EE741045FC61003B26A0 /* AppDelegate.m */; };
-		0AF3EF8710461DD3003B26A0 /* QuickTimeAudioUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3EF8610461DD3003B26A0 /* QuickTimeAudioUtils.c */; };
-		0AF3EF8F10461EF0003B26A0 /* InfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3EF8E10461EF0003B26A0 /* InfoObject.m */; };
 		0AF3EF9D10461FFA003B26A0 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3EF9C10461FFA003B26A0 /* CoreAudio.framework */; };
 		0AF3EFA210462012003B26A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3EFA110462012003B26A0 /* AudioToolbox.framework */; };
 		0AF3EFA410462012003B26A0 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3EFA310462012003B26A0 /* AudioUnit.framework */; };
@@ -28,10 +26,6 @@
 		0AF3EE461045FB36003B26A0 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
 		0AF3EE731045FC61003B26A0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AF3EE741045FC61003B26A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0AF3EF8510461DD3003B26A0 /* QuickTimeAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickTimeAudioUtils.h; sourceTree = "<group>"; };
-		0AF3EF8610461DD3003B26A0 /* QuickTimeAudioUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuickTimeAudioUtils.c; sourceTree = "<group>"; };
-		0AF3EF8D10461EF0003B26A0 /* InfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoObject.h; sourceTree = "<group>"; };
-		0AF3EF8E10461EF0003B26A0 /* InfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoObject.m; sourceTree = "<group>"; };
 		0AF3EF9C10461FFA003B26A0 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		0AF3EFA110462012003B26A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0AF3EFA310462012003B26A0 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -68,10 +62,6 @@
 			children = (
 				0AF3EE731045FC61003B26A0 /* AppDelegate.h */,
 				0AF3EE741045FC61003B26A0 /* AppDelegate.m */,
-				0AF3EF8510461DD3003B26A0 /* QuickTimeAudioUtils.h */,
-				0AF3EF8610461DD3003B26A0 /* QuickTimeAudioUtils.c */,
-				0AF3EF8D10461EF0003B26A0 /* InfoObject.h */,
-				0AF3EF8E10461EF0003B26A0 /* InfoObject.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -205,8 +195,6 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				0AF3EE751045FC61003B26A0 /* AppDelegate.m in Sources */,
-				0AF3EF8710461DD3003B26A0 /* QuickTimeAudioUtils.c in Sources */,
-				0AF3EF8F10461EF0003B26A0 /* InfoObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
