@@ -36,6 +36,10 @@
 	return YES;
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+	return YES;
+}
+
 - (IBAction)pathFieldChanged:(id)sender {
 	[self populateValidMoviePaths];
 }
