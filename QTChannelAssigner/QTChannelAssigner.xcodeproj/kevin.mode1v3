@@ -272,6 +272,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
@@ -280,8 +281,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>11</integer>
+									<integer>6</integer>
+									<integer>4</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -336,10 +338,9 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0ACF35DA1059FA9B0002628F</string>
+										<string>0ACF35EE1059FF250002628F</string>
 										<key>history</key>
 										<array>
-											<string>0AF3EE861045FFF4003B26A0</string>
 											<string>0AF3F05310462524003B26A0</string>
 											<string>0AF3F09410477475003B26A0</string>
 											<string>0A9865F01054527F0026DBA9</string>
@@ -347,7 +348,12 @@
 											<string>0A6F88581059520F00AF1F90</string>
 											<string>0ACF35501059E3DC0002628F</string>
 											<string>0ACF35931059EC6D0002628F</string>
-											<string>0ACF35941059EC6D0002628F</string>
+											<string>0ACF35EA1059FF1F0002628F</string>
+											<string>0ACF35EB1059FF1F0002628F</string>
+										</array>
+										<key>nextStack</key>
+										<array>
+											<string>0ACF35EC1059FF1F0002628F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -371,11 +377,8 @@
 											<string>0ACF353D1059DDEC0002628F</string>
 											<string>0ACF35481059DF8C0002628F</string>
 											<string>0ACF35541059E3DC0002628F</string>
-											<string>0ACF35551059E3DC0002628F</string>
 											<string>0ACF35561059E3DC0002628F</string>
-											<string>0ACF35891059E9D60002628F</string>
 											<string>0ACF358A1059E9D60002628F</string>
-											<string>0ACF35951059EC6D0002628F</string>
 											<string>0ACF35961059EC6D0002628F</string>
 										</array>
 									</dict>
