@@ -49,20 +49,45 @@ while args[0].startswith('-'):
         usage()
     args = args[1:]
 
-def nums_from_bound(s):
+#def is_bound(s):
+#    vals = nums_from_bound(s) #                                    recursion
+#    if len(vals) > 0:
+#        return True
+#    return False
+        
+# check whether first arg is a prefix
+prefix = DEFAULT_PREFIX
+#if not is_bound(args[0]):
+#    prefix = args[0]
+#    while prefix.startswith("\\"):
+#        prefix = prefix[1:]
+#    args = args[1:]
+
+# 1 2,3:5-4
+# build list of given numbers
+out = []
+avoid = []
+for s in args:
+    #vals = nums_from_bound(arg)
+    target = out
+    if s.startswith('-'):
+        target = avoid
+        s = s[1:]
     try:
-        val = int(s)
-        return [val,]
+        target.extend([int(s),])
+        continue
+        #                                                    return
     except ValueError, e:
         if ',' in s:
             ret = []
             vals = s.split(',')
             for val in vals:
-                nums = nums_from_bound(val)
+                nums = nums_from_bound(val) #                       recursion
                 ret.extend(nums)
-            return ret
+            target.extend(ret)
+            continue #                                       return
         default_range_delimiter = ':'
-        range_delimiters = ['-', '..']
+        range_delimiters = ('..',)
         for delim in range_delimiters:
             s = s.replace(delim, ':')
 
@@ -71,18 +96,20 @@ def nums_from_bound(s):
             try:
                 stripped = ''.join([l for l in s if l in "0123456789"])
                 val = int(stripped)
-                return [val,]
+                val = [val,] #                               return
+                target.extend([val,])
             except:
-                pass
-            return []
+                continue
+            continue #                                       return
 
         bounds = s.split(':')
         n_bounds = len(bounds)
         if n_bounds == 0:
-            return []
+            continue #                                       return
         elif n_bounds == 1:
             val = int(bounds[0])
-            return [val,]
+            target.extend([val,]) #                          return
+            continue
         elif n_bounds == 2 and '' not in bounds:
             lower = int(bounds[0])
             upper = int(bounds[1])
@@ -91,31 +118,15 @@ def nums_from_bound(s):
                 lower = upper
                 upper = tmp
             vals = range(lower, upper + 1)
-            return vals
+            target.extend(vals)
+            continue  #                                      return
 
-def is_bound(s):
-    vals = nums_from_bound(s)
-    if len(vals) > 0:
-        return True
-    return False
-        
-# check whether first arg is a prefix
-prefix = DEFAULT_PREFIX
-if not is_bound(args[0]):
-    prefix = args[0]
-    while prefix.startswith("\\"):
-        prefix = prefix[1:]
-    args = args[1:]
 
-# build list of given numbers
-out = []
-for arg in args:
-    vals = nums_from_bound(arg)
     #print "            vals =", vals
-    out.extend(vals)
+    #out.extend(vals)
 
 try:
-    numbers = [int(n) for n in out]
+    numbers = [int(n) for n in out if n not in [int(foe) for foe in avoid]]
 except:
     print
     raise SystemExit
