@@ -39,6 +39,8 @@ if len(args) <= 1:
     usage()
 args = args[1:]
 
+prefix = DEFAULT_PREFIX
+
 # look for flagged args
 just_numbers = False
 while args[0].startswith('-'):
@@ -47,68 +49,53 @@ while args[0].startswith('-'):
         just_numbers = True
     elif flag == '-h' or flag == '--help':
         usage()
+    elif flag.startswith('-p') or flag.startswith('--prefix'):
+        if '=' in flag:
+            prefix = flag.split('=')[1]
+        else:
+            prefix = args[1]
+            args = args[1:]
     args = args[1:]
 
-#def is_bound(s):
-#    vals = nums_from_bound(s) #                                    recursion
-#    if len(vals) > 0:
-#        return True
-#    return False
-        
-# check whether first arg is a prefix
-prefix = DEFAULT_PREFIX
-#if not is_bound(args[0]):
-#    prefix = args[0]
-#    while prefix.startswith("\\"):
-#        prefix = prefix[1:]
-#    args = args[1:]
 
-# 1 2,3:5-4
-# build list of given numbers
 out = []
 avoid = []
 for s in args:
-    #vals = nums_from_bound(arg)
     target = out
     if s.startswith('-'):
         target = avoid
         s = s[1:]
+    elif '-' in s:
+        args.extend(s.replace('-', ' -').split(' '))
+        continue
     try:
         target.extend([int(s),])
         continue
-        #                                                    return
     except ValueError, e:
         if ',' in s:
-            ret = []
-            vals = s.split(',')
-            for val in vals:
-                nums = nums_from_bound(val) #                       recursion
-                ret.extend(nums)
-            target.extend(ret)
-            continue #                                       return
+            args.extend(s.split(','))
+            continue
         default_range_delimiter = ':'
         range_delimiters = ('..',)
         for delim in range_delimiters:
             s = s.replace(delim, ':')
 
         if not default_range_delimiter in s:
-            # print "INVALID ARG"
             try:
                 stripped = ''.join([l for l in s if l in "0123456789"])
                 val = int(stripped)
-                val = [val,] #                               return
                 target.extend([val,])
             except:
                 continue
-            continue #                                       return
+            continue
 
         bounds = s.split(':')
         n_bounds = len(bounds)
         if n_bounds == 0:
-            continue #                                       return
+            continue
         elif n_bounds == 1:
             val = int(bounds[0])
-            target.extend([val,]) #                          return
+            target.extend([val,])
             continue
         elif n_bounds == 2 and '' not in bounds:
             lower = int(bounds[0])
@@ -119,18 +106,13 @@ for s in args:
                 upper = tmp
             vals = range(lower, upper + 1)
             target.extend(vals)
-            continue  #                                      return
-
-
-    #print "            vals =", vals
-    #out.extend(vals)
+            continue
 
 try:
     numbers = [int(n) for n in out if n not in [int(foe) for foe in avoid]]
 except:
     print
     raise SystemExit
-#print numbers
 numbers.sort()
 numbers = list(set(numbers))
 numbers.sort()
@@ -147,7 +129,6 @@ valid_env_keys = [v for v in env_keys if v in all_env_var_names]
 
 selected_file_paths = [os.environ[k] for k in valid_env_keys]
 
-#if len(selected_file_paths) > 0:
 if len(env_keys) == len(selected_file_paths):
     # check that files exist
     exists = True
