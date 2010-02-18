@@ -17,6 +17,8 @@ function hs {
     rm "$TMP_FILE_PATH";
 }
 
+# this might be worthwhile:
+# if svn diff &> /dev/null; then echo "is svn $?"; else echo "not svn $?"; fi;
 function sdfl {
     TMP_FILE_PATH="/tmp/svn-$USER.diff"
     svn diff $* > "$TMP_FILE_PATH"
