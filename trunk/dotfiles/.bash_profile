@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
-FILES="env aliases functions functions_vcs"
-MAC_FILES="env_mac aliases_mac aliases_mac_apps functions_mac"
-
 if [[ "$OSTYPE" == darwin* ]]; then
 	MAC=1
 fi
 
-if [[ -d "$HOME/.jibberia_bash" ]]; then
-	BASE="$HOME/.jibberia_bash"
+BASE="$HOME/.jibberia_bash"
+
+if [[ -d "$BASE" ]]; then
 	
-	for FILE in $FILES; do
-		FILE="$BASE/$FILE"
+	for FILE in `ls $BASE/universal`; do
+		FILE="$BASE/universal/$FILE"
 		# echo "$FILE"
 		if [[ -x "$FILE" && ! -d "$FILE" ]]; then
 			source "$FILE"
@@ -19,8 +17,10 @@ if [[ -d "$HOME/.jibberia_bash" ]]; then
 	done
 	
 	if [[ $MAC ]]; then
-		for FILE in $MAC_FILES; do
-			FILE="$BASE/$FILE"
+        echo "---mac---"
+		# for FILE in $MAC_FILES; do
+	    for FILE in `ls $BASE/mac`; do
+			FILE="$BASE/mac/$FILE"
 			# echo "$FILE"
 			if [[ -x "$FILE" && ! -d "$FILE" ]]; then
 				source "$FILE"
