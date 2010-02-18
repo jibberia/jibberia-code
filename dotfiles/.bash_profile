@@ -15,11 +15,13 @@ if [[ -d "$BASE" ]]; then
 			source "$FILE"
 		fi
 	done
+
+    set +v
 	
 	if [[ $MAC ]]; then
-        echo "---mac---"
+        # echo "---mac--- base = $BASE"
 		# for FILE in $MAC_FILES; do
-	    for FILE in `ls $BASE/mac`; do
+	    for FILE in `/bin/ls $BASE/mac`; do
 			FILE="$BASE/mac/$FILE"
 			# echo "$FILE"
 			if [[ -x "$FILE" && ! -d "$FILE" ]]; then
