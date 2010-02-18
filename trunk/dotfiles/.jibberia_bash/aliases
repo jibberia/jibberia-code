@@ -5,7 +5,9 @@ alias lt='llt'
 alias lsl='ll -a'
 
 alias tree='tree -C'
-#alias less="/usr/share/vim/**/macros/less.sh"
+
+# alias less=/usr/share/vim/vim72/macros/less.sh
+# alias less="/usr/share/vim/**/macros/less.sh"
 alias less=/usr/share/vim/**/macros/less.sh
 
 # TODO make sl a function
