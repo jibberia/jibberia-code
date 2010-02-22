@@ -2,8 +2,10 @@ alias ls='ls -F --color'
 alias ll='ls -l'
 alias llt='ll -t'
 alias lt='llt'
+alias lth='lt | head'
 alias lsl='ll -a'
 
+alias tl='`which tree` | `which less`'
 alias tree='tree -C'
 
 # alias less=/usr/share/vim/vim72/macros/less.sh
