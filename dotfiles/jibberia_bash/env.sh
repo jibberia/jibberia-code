@@ -4,8 +4,6 @@ export DISPLAY=:0.0
 export TERM=xterm-color
 export CLICOLOR=1
 
-export GOOGLE_CODE_PASSWORD='vA5BV8kq9Jn7'
-
 export EDITOR=vim
 export SVN_EDITOR=vim
 # export PS1="\h:\w \u\$ "
