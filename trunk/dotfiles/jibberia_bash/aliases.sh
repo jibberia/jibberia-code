@@ -1,16 +1,17 @@
+# alias less=/usr/share/vim/vim72/macros/less.sh
+# alias less="/usr/share/vim/**/macros/less.sh"
+# alias less=/usr/share/vim/**/macros/less.sh
+alias less="`ls /usr/share/vim/**/macros/less.sh | sort -n | tail -1`"
+
 alias ls='ls -F --color'
 alias ll='ls -l'
 alias llt='ll -t'
 alias lt='llt'
-alias lth='lt | head'
+alias lth='llt | head'
 alias lsl='ll -a'
 
 alias tl='`which tree` | `which less`'
 alias tree='tree -C'
-
-# alias less=/usr/share/vim/vim72/macros/less.sh
-# alias less="/usr/share/vim/**/macros/less.sh"
-alias less=/usr/share/vim/**/macros/less.sh
 
 # TODO make sl a function
 # alias sl='cat /Users/kevin/.sl.txt'
