@@ -1,34 +1,39 @@
 #!/usr/bin/env bash
 
+DEBUG="true"
+
+POSIX_FILES="env aliases functions"
+MAC_FILES="env_mac aliases_mac functions_mac"
+EXTRAS="functions_vcs"
+
+FILES_TO_SOURCE="$POSIX_FILES"
+
 if [[ "$OSTYPE" == darwin* ]]; then
-	MAC=1
+	FILES_TO_SOURCE="$FILES_TO_SOURCE $MAC_FILES"
 fi
 
-BASE="$HOME/.jibberia_bash"
+FILES_TO_SOURCE="$FILES_TO_SOURCE $MAC_FILES $EXTRAS"
+$DEBUG && echo "files to source: [$FILES_TO_SOURCE]"
+
+BASE="`dirname $BASH_SOURCE`/jibberia_bash"
+$DEBUG && echo "base: [$BASE]"
 
 if [[ -d "$BASE" ]]; then
-	
-	for FILE in `ls $BASE/universal`; do
-		FILE="$BASE/universal/$FILE"
-		# echo "$FILE"
+
+	for FILE in $FILES_TO_SOURCE; do
+		# $DEBUG && echo "$FILE"
+		FILE="$BASE/$FILE.sh"
 		if [[ -x "$FILE" && ! -d "$FILE" ]]; then
+			$DEBUG && echo "sourced $FILE"
 			source "$FILE"
+		else
+			$DEBUG && echo "*** COULD NOT SOURCE [$FILE]"
 		fi
 	done
-
-    set +v
-	
-	if [[ $MAC ]]; then
-        # echo "---mac--- base = $BASE"
-		# for FILE in $MAC_FILES; do
-	    for FILE in `/bin/ls $BASE/mac`; do
-			FILE="$BASE/mac/$FILE"
-			# echo "$FILE"
-			if [[ -x "$FILE" && ! -d "$FILE" ]]; then
-				source "$FILE"
-			fi
-		done
-	fi
+else
+	echo "************************************"
+	echo "** unable to source jibberia_bash **"
+	echo "************************************"
 fi
 
 if which fortune &> /dev/null; then
