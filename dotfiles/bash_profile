@@ -12,7 +12,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	FILES_TO_SOURCE="$FILES_TO_SOURCE $MAC_FILES"
 fi
 
-FILES_TO_SOURCE="$FILES_TO_SOURCE $MAC_FILES $EXTRAS"
+FILES_TO_SOURCE="$FILES_TO_SOURCE $EXTRAS"
 $DEBUG && echo "files to source: [$FILES_TO_SOURCE]"
 
 BASE="`dirname $BASH_SOURCE`/jibberia_bash"
