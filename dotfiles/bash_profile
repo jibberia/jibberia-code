@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEBUG="true"
+DEBUG="false"
 
 POSIX_FILES="env aliases functions"
 MAC_FILES="env_mac aliases_mac functions_mac"
