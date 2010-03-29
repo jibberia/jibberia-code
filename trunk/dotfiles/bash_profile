@@ -19,7 +19,6 @@ BASE="`dirname $BASH_SOURCE`/jibberia_bash"
 $DEBUG && echo "base: [$BASE]"
 
 if [[ -d "$BASE" ]]; then
-
 	for FILE in $FILES_TO_SOURCE; do
 		# $DEBUG && echo "$FILE"
 		FILE="$BASE/$FILE.sh"
