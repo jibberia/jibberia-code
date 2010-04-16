@@ -28,5 +28,7 @@ alias tail-httpd='sudo tail -f /var/log/httpd/access_log /var/log/httpd/error_lo
 
 alias myip="curl www.whatismyip.com/automation/n09230945.asp && echo"
 
+alias svnupdry="svn merge --dry-run -r BASE:HEAD ."
+
 # complete -C "perl -le'\$p=qq#^\$ARGV[1]#;@ARGV=q#$HOME/.ssh/config#;/\$p/&&/^\D/&&not(/[*?]/)&&print for map{split/\s+/}grep{s/^\s*Host(?:Name)?\s+//i}<>'" ssh
 
