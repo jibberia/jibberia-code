@@ -6,7 +6,7 @@ ENV_FILES="env"
 MAC_ENV_FILES="env_mac"
 
 POSIX_FILES="aliases functions"
-MAC_FILES="env_mac aliases_mac functions_mac"
+MAC_FILES="aliases_mac functions_mac"
 
 EXTRAS="functions_vcs"
 
@@ -33,11 +33,14 @@ if [[ -d "$BASE" ]]; then
 			$DEBUG && echo "*** COULD NOT SOURCE [$FILE]"
 		fi
 	done
+	unset FILE
 else
 	echo "************************************"
 	echo "** unable to source jibberia_bash **"
 	echo "************************************"
 fi
+
+unset ENV_FILES MAC_ENV_FILES POSIX_FILES MAC_FILES ENV_FILES EXTRAS FILES_TO_SOURCE BASE DEBUG
 
 if which fortune &> /dev/null; then
 	fortune -a
