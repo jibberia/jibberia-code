@@ -2,14 +2,18 @@
 
 DEBUG="false"
 
-POSIX_FILES="env aliases functions"
+ENV_FILES="env"
+MAC_ENV_FILES="env_mac"
+
+POSIX_FILES="aliases functions"
 MAC_FILES="env_mac aliases_mac functions_mac"
+
 EXTRAS="functions_vcs"
 
-FILES_TO_SOURCE="$POSIX_FILES"
+FILES_TO_SOURCE="$ENV_FILES $POSIX_FILES"
 
 if [[ "$OSTYPE" == darwin* ]]; then
-	FILES_TO_SOURCE="$FILES_TO_SOURCE $MAC_FILES"
+	FILES_TO_SOURCE="$ENV_FILES $MAC_ENV_FILES $POSIX_FILES $MAC_FILES"
 fi
 
 FILES_TO_SOURCE="$FILES_TO_SOURCE $EXTRAS"
