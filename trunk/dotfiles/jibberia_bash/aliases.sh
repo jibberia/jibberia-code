@@ -10,8 +10,26 @@ alias lt='llt'
 alias lth='llt | head'
 alias lsl='ll -a'
 
-alias tl='`which tree` | `which less`'
-alias tree='tree -C'
+TREE_PATH=`which tree`
+if [[ -x $TREE_PATH ]]; then
+	LESS_PATH=`which less`
+
+	alias t="$TREE_PATH -C"
+	alias tree="$TREE_PATH -C"
+	alias tl="$TREE_PATH | $LESS_PATH"
+
+	for (( i = 1; i <= 6; i++ )); do
+		alias t$i="$TREE_PATH -C -L $i"
+		alias tree$i="$TREE_PATH - C -L $i"
+		alias tl$i="$TREE_PATH -L $i | $LESS_PATH"
+		alias t$i\l="$TREE_PATH -L $i | $LESS_PATH"
+		alias treel$i="$TREE_PATH -L $i | $LESS_PATH"
+		alias tree$i\l="$TREE_PATH -L $i | $LESS_PATH"
+	done
+	
+	unset i LESS_PATH
+fi
+unset TREE_PATH
 
 # TODO make sl a function
 # alias sl='cat /Users/kevin/.sl.txt'
