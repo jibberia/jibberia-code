@@ -18,13 +18,24 @@ if [[ -x $TREE_PATH ]]; then
 	alias tree="$TREE_PATH -C"
 	alias tl="$TREE_PATH | $LESS_PATH"
 
+	alias tal="$TREE_PATH -a | $LESS_PATH"
+	alias treeal="$TREE_PATH -a | $LESS_PATH"
+	alias tla="$TREE_PATH -a | $LESS_PATH"
+	
 	for (( i = 1; i <= 6; i++ )); do
 		alias t$i="$TREE_PATH -C -L $i"
 		alias tree$i="$TREE_PATH - C -L $i"
 		alias tl$i="$TREE_PATH -L $i | $LESS_PATH"
+
 		alias t$i\l="$TREE_PATH -L $i | $LESS_PATH"
 		alias treel$i="$TREE_PATH -L $i | $LESS_PATH"
 		alias tree$i\l="$TREE_PATH -L $i | $LESS_PATH"
+
+		alias ta$i="$TREE_PATH -C -a -L $i"
+		alias ta$i\l="$TREE_PATH -a -L $i | $LESS_PATH"
+		alias tal$i="$TREE_PATH -a -L $i | $LESS_PATH"
+		alias treeal$i="$TREE_PATH -a -L $i | $LESS_PATH"
+		alias treea$i\l="$TREE_PATH -a -L $i | $LESS_PATH"
 	done
 	
 	unset i LESS_PATH
