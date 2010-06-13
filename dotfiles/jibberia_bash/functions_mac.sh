@@ -7,6 +7,13 @@ google() {
     done;
     open "http://www.google.com/search?q=$query"
 }
+cgoogle() {
+    query=''
+    for arg in $@; do
+        query="$query%20$arg"
+    done;
+    open -a "Google Chrome" "http://www.google.com/search?q=$query"
+}
 safari () {
     url=$1
     if [[ ! "$url" =~ "http://.*" ]]
