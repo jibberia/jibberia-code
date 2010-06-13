@@ -54,6 +54,7 @@ alias date-timestamp="date +\"%s\""
 alias datefromtimestamp="date -r"
 
 alias tail-httpd='sudo tail -f /var/log/httpd/access_log /var/log/httpd/error_log | egrep -v "favicon|^==|^$"'
+alias apachectltestandrestart='echo "Testing apache config syntax..."; sudo apachectl configtest && ((echo "Restarting apache..."; sudo apachectl restart) && echo "done" || echo "Apache restart failed.")'
 
 alias myip="curl www.whatismyip.com/automation/n09230945.asp && echo"
 
