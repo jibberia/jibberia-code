@@ -10,7 +10,7 @@ alias lt='llt'
 alias lth='llt | head'
 alias lsl='ll -a'
 
-TREE_PATH=`which tree`
+TREE_PATH=`which tree 2> /dev/null`
 if [[ -x $TREE_PATH ]]; then
 	LESS_PATH=`which less`
 
