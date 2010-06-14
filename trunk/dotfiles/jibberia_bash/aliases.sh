@@ -24,7 +24,7 @@ if [[ -x $TREE_PATH ]]; then
 	
 	for (( i = 1; i <= 6; i++ )); do
 		alias t$i="$TREE_PATH -C -L $i"
-		alias tree$i="$TREE_PATH - C -L $i"
+		alias tree$i="$TREE_PATH -C -L $i"
 		alias tl$i="$TREE_PATH -L $i | $LESS_PATH"
 
 		alias t$i\l="$TREE_PATH -L $i | $LESS_PATH"
