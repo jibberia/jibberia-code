@@ -45,4 +45,3 @@ unset ENV_FILES MAC_ENV_FILES POSIX_FILES MAC_FILES ENV_FILES EXTRAS FILES_TO_SO
 if which fortune &> /dev/null; then
 	fortune -a
 fi
-
