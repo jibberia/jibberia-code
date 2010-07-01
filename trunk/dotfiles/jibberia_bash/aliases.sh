@@ -10,6 +10,8 @@ alias lt='llt'
 alias lth='llt | head'
 alias lsl='ll -a'
 
+alias quote='sed "s|^\(.*\)$|\"\1\"|g"'
+
 TREE_PATH=`which tree 2> /dev/null`
 if [[ -x $TREE_PATH ]]; then
 	LESS_PATH=`which less`
@@ -22,7 +24,8 @@ if [[ -x $TREE_PATH ]]; then
 	alias treeal="$TREE_PATH -a | $LESS_PATH"
 	alias tla="$TREE_PATH -a | $LESS_PATH"
 	
-	for (( i = 1; i <= 6; i++ )); do
+	# for (( i = 1; i <= 6; i++ )); do
+	for i in {1..6} ; do
 		alias t$i="$TREE_PATH -C -L $i"
 		alias tree$i="$TREE_PATH -C -L $i"
 		alias tl$i="$TREE_PATH -L $i | $LESS_PATH"
