@@ -1,5 +1,5 @@
 # ok, not a function, but it's VCS-related
-alias svnupdry=`svn merge --dry-run -r BASE:HEAD .`
+alias svnupdry='svn merge --dry-run -r BASE:HEAD .'
 
 function ss {
     TMP_FILE_PATH="/tmp/svn-st-$USER"
