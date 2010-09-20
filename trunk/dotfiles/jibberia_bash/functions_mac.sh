@@ -16,7 +16,7 @@ cgoogle() {
 }
 safari () {
     url=$1
-    if [[ ! "$url" =~ "http://.*" ]]
+    if [ ! -e "$url" ] && [[ ! "$url" =~ http://.* ]]
     then
         url="http://$url"
     fi
@@ -24,7 +24,7 @@ safari () {
 }
 chrome () {
     url=$1
-    if [[ ! "$url" =~ "http://.*" ]]
+    if [ ! -e "$url" ] && [[ ! "$url" =~ http://.* ]]
     then
         url="http://$url"
     fi
