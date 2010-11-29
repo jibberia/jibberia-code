@@ -10,6 +10,6 @@ echon() { echo $1 | tr ":" "\n" ; }
 function mx {
     touch "$1" && chmod +x "$1"
 }
-function mxv {
+function vx {
     touch "$1" && chmod +x "$1" && vim "$1"
 }
