@@ -9,5 +9,8 @@ export SVN_EDITOR=vim
 # export PS1="\h:\w \u\$ "
 export PS1="\h:\[\e[34m\]\w\[\e[0m\] \u$ "
 
+# set window title to hostname:
+echo -n -e "\033]0;`hostname -s`\007"
+
 shopt -s extglob
 
