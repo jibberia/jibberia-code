@@ -5,6 +5,7 @@ google() {
     for arg in $@; do
         query="$query%20$arg"
     done;
+    query=`echo $query | sed 's/^%20//'`
     open "http://www.google.com/search?q=$query"
 }
 cgoogle() {
@@ -12,6 +13,7 @@ cgoogle() {
     for arg in $@; do
         query="$query%20$arg"
     done;
+    query=`echo $query | sed 's/^%20//'`
     open -a "Google Chrome" "http://www.google.com/search?q=$query"
 }
 safari () {
