@@ -13,3 +13,4 @@ function mx {
 function vx {
     touch "$1" && chmod +x "$1" && vim "$1"
 }
+namewindow () { echo -n -e "\033]0;"$@"\007"; }
