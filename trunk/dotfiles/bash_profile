@@ -8,7 +8,7 @@ MAC_ENV_FILES="env_mac"
 POSIX_FILES="aliases functions"
 MAC_FILES="aliases_mac functions_mac"
 
-EXTRAS="functions_vcs"
+EXTRAS="functions_vcs git"
 
 FILES_TO_SOURCE="$ENV_FILES $POSIX_FILES"
 

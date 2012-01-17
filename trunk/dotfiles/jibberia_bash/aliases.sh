@@ -49,7 +49,12 @@ unset TREE_PATH
 # alias sl='cat /Users/kevin/.sl.txt'
 
 alias ipython='ipython -noconfirm_exit'
-alias pmpy='django-admin.py' # 'python manage.py' 
+# django-admin is like manage.py but better -- it respects the DJANGO_SETTINGS_MODULE environment var.
+# only downside is that it may not be on $PATH.
+# TODO check whether django-admin.py is on path, if not use manage.py
+# alias pmpy='python manage.py'
+alias pmpy='django-admin.py'
+
 alias irb='irb --readline -r irb/completion'
 
 alias date-time="date +\"%H:%M:%S\""
