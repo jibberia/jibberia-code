@@ -46,3 +46,5 @@ function hdfm {
     mate "$TMP_FILE_PATH"
     rm "$TMP_FILE_PATH"
 }
+
+function pmpy { python manage.py $@ --settings=$DJANGO_SETTINGS_MODULE; }

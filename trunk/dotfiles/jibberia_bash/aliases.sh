@@ -46,14 +46,16 @@ fi
 unset TREE_PATH
 
 # TODO make sl a function
-# alias sl='cat /Users/kevin/.sl.txt'
+alias sl='cat ~/.sl.txt'
 
 alias ipython='ipython -noconfirm_exit'
 # django-admin is like manage.py but better -- it respects the DJANGO_SETTINGS_MODULE environment var.
 # only downside is that it may not be on $PATH.
 # TODO check whether django-admin.py is on path, if not use manage.py
+# on second thought, this seems to change per project... i could do something with
+# DJANGO_SETTINGS_MODULE but, y'know... just set it in ~/.bash_profile
 # alias pmpy='python manage.py'
-alias pmpy='django-admin.py'
+# alias pmpy='django-admin.py'
 
 alias irb='irb --readline -r irb/completion'
 
