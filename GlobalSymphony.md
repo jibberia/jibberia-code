@@ -1,0 +1,93 @@
+_This page is living here ([my](http://jibberia.com) personal catch-all home for random code) until we come up with a good name for this project; then it will get its own google code project. And I think we're going GPL, though I chose BSD for this project. Whatever._
+
+# ARIA: Recombinant International Audio #
+
+ARIA: Recombinant International Audio lets anybody with an iPhone contribute audio field recordings or musical samples to an open, anonymous database. The samples are tagged and geotagged, and any listener with a web browser can tour audio maps or make layered compositions from musical loops. Bonus: GPL code, Creative Commons audio!
+
+**Concisely:** Since people all over the world have fancy phones, let's make it easy for people to take samples of audio wherever they like and contribute to an unending, unique global symphony.
+
+# Components #
+
+  * **upload client:**  mobile app that uploads audio samples and metadata
+  * **server:**  web app that accepts uploads, stores files and associated metadata, and serves it too
+  * **"symphony" client:**  web app that plays back the audio in various wonderful ways
+
+
+---
+
+
+## Upload Client ##
+
+**Working concept / use case**
+
+You go somewhere. You start the app, maybe taking a picture of where you are, and then put the phone down somewhere. At some point, it'll start recording, and when it decides to stop, it will upload the audio, (photo?), geographic location (via GPS), and probably some other useful (anonymous) information to our server.
+
+Then, the possibilities for playback are plentiful and wonderful -- arbitrary samples from a small region? mouse around the world to hear what's been happening? Or ignore the location. Audio is audio. Have the server analyse each sample, extracting qualities of sound (bright? dark? rhythmic? erratic? etc), and allow the user to make broad compositional strokes.
+
+The above ignores the planned second iteration; which feels important to us: **musician mode:**
+  * record/stop button
+  * plays back the loop in a loop, potentially allowing you to trim the edges of the loop to make it tight
+  * enhanced metadata:
+    * rhythmic?
+    * harmonic / melodic?
+    * one-shot?
+    * (etc)
+
+This will allow for more "musical" compositions on the web-symphony-client side. See below.
+
+### First Iteration ###
+
+iPhone app:
+  * record/stop button
+  * play button
+  * upload button:
+    * hopefully compresses the audio
+    * includes metadata in json format (detailed below)
+    * POSTs the data
+    * indicates success / failure
+
+Metadata:
+  * timestamp
+  * lat/lon
+  * (unsure - audio details? length, format, filename, etc..?)
+
+### Second Iteration ###
+
+For the public.
+  * rec
+
+
+---
+
+
+## Server ##
+
+### First Iteration ###
+
+tech:
+  * **python/django**
+> > Honestly, a personal choice; it's kinda heavy for what we need, but it fits my brain like a glove, and has wonderful support for file uploads and such
+  * mysql (because i'm considering deploying this on dreamhost)
+
+REST api thoughts:
+
+  * POST /sample
+  * GET /sample
+    * /sample/random
+
+#### Audio Transcoding ####
+
+Only compressed format phone can natively do is Apple Lossless, aka ALAC; only format Flash plays is MP3. To do this on linux, we have to convert the ALAC file (which comes in a .m4a container) to wav with this tool: http://craz.net/programs/itunes/alac.html Then we can use lame to make an mp3.
+
+
+---
+
+
+## Web Symphony Client ##
+
+### First Iteration ###
+
+Almost no UI: loop X samples using [soundmanager2](http://www.schillmania.com/projects/soundmanager2) and javascript.
+
+### ideas ###
+  * collaborative editing. say we have a number of playback modules, and the user can do some sort of composing. let people save phrases, motifs, sections, etc. and share them. think fractals.
