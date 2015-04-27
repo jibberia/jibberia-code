@@ -48,7 +48,6 @@ unset TREE_PATH
 # TODO make sl a function
 alias sl='cat ~/.sl.txt'
 
-alias ipython='ipython -noconfirm_exit'
 # django-admin is like manage.py but better -- it respects the DJANGO_SETTINGS_MODULE environment var.
 # only downside is that it may not be on $PATH.
 # TODO check whether django-admin.py is on path, if not use manage.py
