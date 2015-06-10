@@ -17,5 +17,6 @@ export PS1="\[\e[34m\]\w\[\e[0m\]\[\e[36m\]\$(__git_ps1)\[\e[0m\] $ "
 # set window title to hostname:
 echo -n -e "\033]0;`hostname -s`\007"
 
-shopt -s extglob
+export GREP_OPTIONS='--color=auto'
 
+shopt -s extglob
