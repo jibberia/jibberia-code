@@ -10,6 +10,10 @@ if [[ -e "$PROFILE_PATH" ]]; then
 	echo
 	echo "source \"$PROFILE_PATH\""
 	echo
+    echo "Then do this:"
+    echo
+    echo "cp jibberia_bash/sl.txt ~/.sl.txt"
+    echo
 else
 	echo "Run ./install.sh from your jibberia-code dotfiles directory"
 	exit 1
