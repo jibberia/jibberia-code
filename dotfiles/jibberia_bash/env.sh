@@ -20,3 +20,6 @@ echo -n -e "\033]0;`hostname -s`\007"
 export GREP_OPTIONS='--color=auto -E'
 
 shopt -s extglob
+
+# 10x history
+export HISTSIZE=5000
