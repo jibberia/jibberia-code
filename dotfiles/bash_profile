@@ -8,7 +8,9 @@ MAC_ENV_FILES="env_mac"
 POSIX_FILES="aliases functions"
 MAC_FILES="aliases_mac functions_mac"
 
-EXTRAS="functions_vcs git git-prompt aliases_git"
+# TODO: get rid of "git-prompt"? the prompt stuff works w/ whatever's in "git"
+#EXTRAS="functions_vcs git git-prompt aliases_git"
+EXTRAS="functions_vcs git aliases_git"
 
 FILES_TO_SOURCE="$ENV_FILES $POSIX_FILES"
 
@@ -24,14 +26,9 @@ $DEBUG && echo "base: [$BASE]"
 
 if [[ -d "$BASE" ]]; then
 	for FILE in $FILES_TO_SOURCE; do
-		# $DEBUG && echo "$FILE"
 		FILE="$BASE/$FILE.sh"
-		if [[ -x "$FILE" && ! -d "$FILE" ]]; then
-			$DEBUG && echo "sourced $FILE"
-			source "$FILE"
-		else
-			$DEBUG && echo "*** COULD NOT SOURCE [$FILE]"
-		fi
+        $DEBUG && echo "sourcing $FILE"
+        source "$FILE"
 	done
 	unset FILE
 else
