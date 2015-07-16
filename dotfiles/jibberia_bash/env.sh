@@ -23,3 +23,8 @@ shopt -s extglob
 
 # 10x history
 export HISTSIZE=5000
+
+# pip should only run if there is a virtualenv currently activated
+# http://hackercodex.com/guide/python-development-environment-on-mac-osx/
+# actually... let's disable this for now, but leave it here
+#export PIP_REQUIRE_VIRTUALENV=true

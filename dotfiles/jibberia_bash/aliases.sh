@@ -70,5 +70,7 @@ alias myip="curl www.whatismyip.com/automation/n09230945.asp && echo"
 alias svnupdry="svn merge --dry-run -r BASE:HEAD ."
 alias hgupdry="hg st --rev .:tip"
 
+alias activate="source bin/activate"
+
 # complete -C "perl -le'\$p=qq#^\$ARGV[1]#;@ARGV=q#$HOME/.ssh/config#;/\$p/&&/^\D/&&not(/[*?]/)&&print for map{split/\s+/}grep{s/^\s*Host(?:Name)?\s+//i}<>'" ssh
 
