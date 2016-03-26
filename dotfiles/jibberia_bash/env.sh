@@ -28,3 +28,11 @@ export HISTSIZE=5000
 # http://hackercodex.com/guide/python-development-environment-on-mac-osx/
 # actually... let's disable this for now, but leave it here
 #export PIP_REQUIRE_VIRTUALENV=true
+
+# semi-zsh-like behavior for bash
+# https://superuser.com/questions/288714/bash-autocomplete-like-zsh
+# show-all-if-ambiguous seems to require a newer bash than apple's
+#   and it kinda sucks without it
+# not sure if I want to keep this...
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'

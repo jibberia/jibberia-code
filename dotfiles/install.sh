@@ -2,6 +2,8 @@
 
 PROFILE_PATH="`pwd`/bash_profile"
 
+# defaults write -g NSDisableAutomaticTermination -bool TRUE
+
 if [[ -e "$PROFILE_PATH" ]]; then
 	echo
 	echo "Add the following line to your ~/.bash_profile"

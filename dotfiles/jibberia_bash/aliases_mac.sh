@@ -1,4 +1,5 @@
 alias m='mate'
+alias s='subl'
 
 unalias ls
 alias ls='ls -F'
