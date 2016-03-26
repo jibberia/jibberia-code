@@ -34,5 +34,7 @@ export HISTSIZE=5000
 # show-all-if-ambiguous seems to require a newer bash than apple's
 #   and it kinda sucks without it
 # not sure if I want to keep this...
-bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
+# and
+# no I don't! too hard to relearn interactivity in bash. maybe someday?
+# bind 'set show-all-if-ambiguous on'
+# bind 'TAB:menu-complete'
