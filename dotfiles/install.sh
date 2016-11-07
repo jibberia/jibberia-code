@@ -12,11 +12,10 @@ if [[ -e "$PROFILE_PATH" ]]; then
 	echo
 	echo "source \"$PROFILE_PATH\""
 	echo
-    echo "Then do these:"
-    echo
-    echo "cp jibberia_bash/sl.txt ~/.sl.txt"
-    echo 'ln -s "$(pwd)/vimrc" "$HOME/.vimrc"'
-    echo
+  echo "Then do:"
+  echo
+  echo 'ln -s "$(pwd)/vimrc" "$HOME/.vimrc"'
+  echo
 else
 	echo "Run ./install.sh from your jibberia-code dotfiles directory"
 	exit 1
