@@ -31,6 +31,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" show line numbers
+"set number " or not
+
 filetype indent plugin on
 " disable 'new line continues comment' behavior
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
