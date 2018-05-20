@@ -31,6 +31,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+"fix search background syntax highlighting
+hi IncSearch cterm=NONE ctermfg=yellow ctermbg=green
+hi Search    cterm=NONE ctermfg=grey ctermbg=blue
+
 " show line numbers
 "set number " or not
 
