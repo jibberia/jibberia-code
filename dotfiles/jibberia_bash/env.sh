@@ -1,7 +1,7 @@
 export PATH="$HOME/bin":$PATH
 export LANG="en_US.UTF-8"
 export DISPLAY=:0.0
-export TERM=xterm-color
+#export TERM=xterm-color
 export CLICOLOR=1
 
 export EDITOR=vim
