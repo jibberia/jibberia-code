@@ -48,3 +48,15 @@ cat << EOF
                             /,\`--'~\--'~\\
 EOF
 }
+
+function pull-latest-screenshot {
+    filename="$(adb shell 'ls -t /sdcard/DCIM/Screenshots' | head -1)"
+    adb pull "$(echo -n /sdcard/DCIM/Screenshots/$filename)"
+    echo "open $filename"
+}
+
+function pull-latest-dcim {
+    filename="$(adb shell 'ls -t /sdcard/DCIM' | head -1)"
+    adb pull "$(echo -n /sdcard/DCIM/filename)"
+    echo "open $filename"
+}

@@ -71,5 +71,3 @@ alias activate="source bin/activate"
 
 # complete -C "perl -le'\$p=qq#^\$ARGV[1]#;@ARGV=q#$HOME/.ssh/config#;/\$p/&&/^\D/&&not(/[*?]/)&&print for map{split/\s+/}grep{s/^\s*Host(?:Name)?\s+//i}<>'" ssh
 
-alias pull-latest-screenshot="adb pull $(echo -n /sdcard/DCIM/Screenshots/$(adb shell 'ls -t /sdcard/DCIM/Screenshots' | head -1))"
-alias pull-latest-dcim="adb pull $(echo -n /sdcard/DCIM/$(adb shell 'ls -t /sdcard/DCIM' | head -1))"
